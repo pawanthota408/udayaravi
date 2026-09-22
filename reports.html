@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reports — Udayaravi Weave Master</title>
+  <meta name="description" content="Get insights into your production, stock, sales, payments and business performance."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="reports.css"/>
+  <link rel="stylesheet" href="corporate-theme.css"/>
+</head>
+<body>
+<div class="app-root">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="logo-block">
+      <img src="../../brain/a507fab7-2db5-406b-a76b-05c571fb76ea/.user_uploaded/media_1790079156110.png" alt="Udayaravi Creations" class="brand-logo-img" onerror="if(this.src.indexOf('logo.png')===-1)this.src='logo.png';" />
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="index.html" id="nav-dashboard">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+        <span data-i18n="nav_dashboard">Dashboard</span>
+      </a>
+      <a class="nav-item" href="production.html" id="nav-production">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+        <span data-i18n="nav_production">Production</span>
+      </a>
+      <a class="nav-item" href="stock.html" id="nav-stock">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_stock">Stock</span>
+      </a>
+      <a class="nav-item" href="salespay.html" id="nav-salespay">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+        <span data-i18n="nav_salespay">Sales &amp; Payments</span>
+      </a>
+      <a class="nav-item active" href="reports.html" id="nav-reports">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_reports">Reports</span>
+      </a>
+      <a class="nav-item" href="customers.html" id="nav-customers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+        <span data-i18n="nav_customers">Customers</span>
+      </a>
+      <a class="nav-item" href="employees.html" id="nav-employees">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_employees">Employees</span>
+      </a>
+      <a class="nav-item" href="suppliers.html" id="nav-suppliers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/></svg>
+        <span data-i18n="nav_suppliers">Suppliers</span>
+      </a>
+      <a class="nav-item" href="settings.html" id="nav-settings">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_settings">Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="wm-label">WEAVE MASTER</div>
+      <div class="toggle-row">
+        <label class="tog">
+          <input type="checkbox" checked id="master-tog"/>
+          <span class="tog-track"></span>
+        </label>
+        <span class="tog-txt" id="tog-txt">ON</span>
+      </div>
+      <div class="tagline">Weaving Progress<br/>A Stronger Tomorrow</div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN WRAPPER ================= -->
+  <div class="main-wrapper">
+    <main class="main">
+
+      <!-- PAGE HEADER -->
+      <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:24px;">
+        <div class="ph-left">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
+            <h1 class="page-title" style="margin:0;font-size:18px;font-weight:700;color:#f59e0b;letter-spacing:-0.01em;">Financial &amp; Operations Reports</h1>
+            <span class="badge-success" style="font-size:12px;padding:4px 10px;">Net Profit: +₹4,80,150 MTD</span>
+          </div>
+          <p class="page-sub" style="margin:0;font-size:13px;color:#94a3b8;">
+            Consolidated weaving metrics, inventory turnover, procurement expenditures, and balance scorecards.
+          </p>
+        </div>
+        <div class="ph-right" style="display:flex;align-items:center;gap:12px;">
+          <div class="lang-switcher" id="lang-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="hi">HI</button>
+            <button class="lang-btn" data-lang="kn">KN</button>
+          </div>
+          <button class="btn-primary" id="btn-print-summary" onclick="window.print()">
+            Print Financial Summary
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 EXECUTIVE KPI CARDS -->
+      <div class="kpi-grid">
+        <!-- Total Revenue -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Gross Sales Revenue</span>
+            <span class="badge-success">+14.2% MoM</span>
+          </div>
+          <div class="kpi-val">₹8,92,450</div>
+          <div class="kpi-sub">Silk sarees, jacquard fabrics, and wholesale yarn</div>
+        </div>
+
+        <!-- Material Spent -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Raw Material &amp; COGS</span>
+            <span class="badge-info">Procurement</span>
+          </div>
+          <div class="kpi-val">₹4,12,300</div>
+          <div class="kpi-sub">Yarn spools, mulberry silk warp, and reactive dyes</div>
+        </div>
+
+        <!-- Net Profit -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Net Operating Profit</span>
+            <span class="badge-success">53.8% Margin</span>
+          </div>
+          <div class="kpi-val" style="color:#10b981;">₹4,80,150</div>
+          <div class="kpi-sub">Net surplus after wages, electricity, and raw yarn</div>
+        </div>
+
+        <!-- Cash In Hand -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Collections Realized</span>
+            <span class="badge-warning">87.4% Rate</span>
+          </div>
+          <div class="kpi-val">₹7,79,900</div>
+          <div class="kpi-sub">Cleared through direct bank transfers and receipts</div>
+        </div>
+      </div>
+
+      <!-- EXECUTIVE SUMMARY SCORECARD -->
+      <div class="corporate-card" style="margin-bottom:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e293b;">
+          <div>
+            <h2 style="font-size:15px;font-weight:600;color:#f8fafc;margin:0;">Executive Performance Scorecard</h2>
+            <span style="font-size:12px;color:#94a3b8;">High-level factory key indicators across production, warehouse buffer, and cash flows</span>
+          </div>
+          <button class="btn-secondary" onclick="window.print()" style="padding:6px 14px;font-size:12px;">Quick Export</button>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:16px;">
+          <div style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:14px;">
+            <div style="font-size:12px;color:#94a3b8;font-weight:500;">DAILY WEAVING OUTPUT</div>
+            <div style="font-size:20px;font-weight:700;color:#f8fafc;margin:6px 0;">285 Meters / Day</div>
+            <span class="badge-success" style="font-size:11px;">12 Looms Active at 98% Efficiency</span>
+          </div>
+          <div style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:14px;">
+            <div style="font-size:12px;color:#94a3b8;font-weight:500;">RAW MATERIAL RUNWAY</div>
+            <div style="font-size:20px;font-weight:700;color:#f8fafc;margin:6px 0;">18 Days Coverage</div>
+            <span class="badge-info" style="font-size:11px;">1,250 kg Cotton + 100 kg Silk</span>
+          </div>
+          <div style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:14px;">
+            <div style="font-size:12px;color:#94a3b8;font-weight:500;">DISPATCH READINESS</div>
+            <div style="font-size:20px;font-weight:700;color:#f8fafc;margin:6px 0;">7 Wholesale Lots</div>
+            <span class="badge-warning" style="font-size:11px;">Packaged for Chennai &amp; Bangalore</span>
+          </div>
+          <div style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:14px;">
+            <div style="font-size:12px;color:#94a3b8;font-weight:500;">OPEN RECEIVABLES</div>
+            <div style="font-size:20px;font-weight:700;color:#ef4444;margin:6px 0;">₹2,18,750 Due</div>
+            <span class="badge-danger" style="font-size:11px;">3 Wholesale Buyers Scheduled</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTS SECTION: 3 COLUMNS -->
+      <div class="charts-grid">
+        <!-- Chart 1: Sales & Payments Trend -->
+        <div class="c-card">
+          <div class="c-header">
+            <div class="c-title">
+              <svg class="c-ic c-ic-amber" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+              <span>Sales &amp; Payments Trend</span>
+            </div>
+            <div class="c-legends">
+              <span class="leg-item"><span class="leg-dot dot-green"></span>Sales</span>
+              <span class="leg-item"><span class="leg-dot dot-blue"></span>Payments Received</span>
+              <span class="leg-item"><span class="leg-dot dot-yellow"></span>Outstanding</span>
+            </div>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="chartSalesTrend"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Production Report -->
+        <div class="c-card">
+          <div class="c-header">
+            <div class="c-title">
+              <svg class="c-ic c-ic-blue" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+              <span>Production Report</span>
+            </div>
+            <div class="c-legends">
+              <span class="leg-item"><span class="leg-dot dot-cyan"></span>Finished Sarees</span>
+              <span class="leg-item"><span class="leg-dot dot-green"></span>Running Looms</span>
+              <span class="leg-item"><span class="leg-dot dot-red"></span>Rejected</span>
+            </div>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="chartProduction"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 3: Product Wise Sales -->
+        <div class="c-card c-card-donut">
+          <div class="c-header">
+            <div class="c-title">
+              <svg class="c-ic c-ic-yellow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+              <span>Product Wise Sales</span>
+            </div>
+          </div>
+          <div class="donut-content">
+            <div class="donut-svg-box">
+              <svg viewBox="0 0 100 100" class="donut-svg">
+                <!-- Sarees 42% (cyan/blue) -->
+                <circle cx="50" cy="50" r="35" fill="none" stroke="#00b4d8" stroke-width="16" stroke-dasharray="92.36 127.54" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+                <!-- Fabrics 28% (green) -->
+                <circle cx="50" cy="50" r="35" fill="none" stroke="#22c55e" stroke-width="16" stroke-dasharray="61.57 158.33" stroke-dashoffset="-92.36" transform="rotate(-90 50 50)"/>
+                <!-- Yarn 15% (yellow) -->
+                <circle cx="50" cy="50" r="35" fill="none" stroke="#facc15" stroke-width="16" stroke-dasharray="32.99 186.91" stroke-dashoffset="-153.93" transform="rotate(-90 50 50)"/>
+                <!-- Custom Orders 8% (orange-red) -->
+                <circle cx="50" cy="50" r="35" fill="none" stroke="#ef4444" stroke-width="16" stroke-dasharray="17.59 202.31" stroke-dashoffset="-186.92" transform="rotate(-90 50 50)"/>
+                <!-- Others 7% (purple) -->
+                <circle cx="50" cy="50" r="35" fill="none" stroke="#a855f7" stroke-width="16" stroke-dasharray="15.39 204.51" stroke-dashoffset="-204.51" transform="rotate(-90 50 50)"/>
+                <!-- Center Text -->
+                <text x="50" y="47" text-anchor="middle" fill="#dde6f0" font-size="8.5" font-family="Inter,sans-serif" font-weight="700">₹8.9L</text>
+                <text x="50" y="56" text-anchor="middle" fill="#7a9ab8" font-size="5.5" font-family="Inter,sans-serif">Total Sales</text>
+              </svg>
+            </div>
+            <div class="donut-legend-list">
+              <div class="d-leg-row">
+                <span class="d-leg-dot" style="background:#00b4d8;"></span>
+                <span class="d-leg-name">Sarees</span>
+                <span class="d-leg-val">42%</span>
+              </div>
+              <div class="d-leg-row">
+                <span class="d-leg-dot" style="background:#22c55e;"></span>
+                <span class="d-leg-name">Fabrics</span>
+                <span class="d-leg-val">28%</span>
+              </div>
+              <div class="d-leg-row">
+                <span class="d-leg-dot" style="background:#facc15;"></span>
+                <span class="d-leg-name">Yarn</span>
+                <span class="d-leg-val">15%</span>
+              </div>
+              <div class="d-leg-row">
+                <span class="d-leg-dot" style="background:#ef4444;"></span>
+                <span class="d-leg-name">Custom Orders</span>
+                <span class="d-leg-val">8%</span>
+              </div>
+              <div class="d-leg-row">
+                <span class="d-leg-dot" style="background:#a855f7;"></span>
+                <span class="d-leg-name">Others</span>
+                <span class="d-leg-val">7%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOWER SPLIT SECTION: TABLES (LEFT) + ACTION PANELS (RIGHT) -->
+      <div class="lower-layout">
+        <!-- LEFT COLUMN: REPORT LIST & SCHEDULED REPORTS -->
+        <div class="tables-column">
+
+          <!-- Table 1: Report List -->
+          <div class="t-card">
+            <div class="t-head">
+              <div class="t-title">
+                <svg class="t-ic t-ic-amber" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+                <span>Report List</span>
+              </div>
+            </div>
+            <div class="table-scroll">
+              <table class="grid-table" id="table-report-list">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Report Name</th>
+                    <th>Description</th>
+                    <th>Period</th>
+                    <th>Generated On</th>
+                    <th class="th-act">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="td-bold">Sales Report</td>
+                    <td class="td-muted">Complete sales details</td>
+                    <td>01-Aug-2026 - 31-Aug-2026</td>
+                    <td class="td-mono">13-Aug-2026 04:15 PM</td>
+                    <td class="td-act">
+                      <button class="t-btn btn-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-dl" title="Download"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-pdf" title="Export PDF"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/></svg></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="td-bold">Payments Report</td>
+                    <td class="td-muted">Received &amp; paid payments</td>
+                    <td>01-Aug-2026 - 31-Aug-2026</td>
+                    <td class="td-mono">13-Aug-2026 04:10 PM</td>
+                    <td class="td-act">
+                      <button class="t-btn btn-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-dl" title="Download"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-pdf" title="Export PDF"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/></svg></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="td-bold">Production Report</td>
+                    <td class="td-muted">Loom-wise production</td>
+                    <td>01-Aug-2026 - 31-Aug-2026</td>
+                    <td class="td-mono">13-Aug-2026 03:55 PM</td>
+                    <td class="td-act">
+                      <button class="t-btn btn-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-dl" title="Download"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-pdf" title="Export PDF"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/></svg></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td class="td-bold">Stock Report</td>
+                    <td class="td-muted">Raw material &amp; finished stock</td>
+                    <td>01-Aug-2026 - 31-Aug-2026</td>
+                    <td class="td-mono">13-Aug-2026 03:40 PM</td>
+                    <td class="td-act">
+                      <button class="t-btn btn-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-dl" title="Download"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-pdf" title="Export PDF"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/></svg></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td class="td-bold">Customer Report</td>
+                    <td class="td-muted">Customer-wise sales</td>
+                    <td>01-Aug-2026 - 31-Aug-2026</td>
+                    <td class="td-mono">13-Aug-2026 03:30 PM</td>
+                    <td class="td-act">
+                      <button class="t-btn btn-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-dl" title="Download"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-pdf" title="Export PDF"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/></svg></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td class="td-bold">Supplier Report</td>
+                    <td class="td-muted">Supplier-wise purchases</td>
+                    <td>01-Aug-2026 - 31-Aug-2026</td>
+                    <td class="td-mono">13-Aug-2026 03:20 PM</td>
+                    <td class="td-act">
+                      <button class="t-btn btn-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-dl" title="Download"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-pdf" title="Export PDF"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/></svg></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td class="td-bold">Employee Report</td>
+                    <td class="td-muted">Employee performance</td>
+                    <td>01-Aug-2026 - 31-Aug-2026</td>
+                    <td class="td-mono">13-Aug-2026 03:10 PM</td>
+                    <td class="td-act">
+                      <button class="t-btn btn-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-dl" title="Download"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></button>
+                      <button class="t-btn btn-pdf" title="Export PDF"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/></svg></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Table 2: Scheduled Reports -->
+          <div class="t-card mt-2">
+            <div class="t-head">
+              <div class="t-title">
+                <svg class="t-ic t-ic-yellow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                <span>Scheduled Reports</span>
+              </div>
+              <button class="btn-add-sched" id="btn-add-sched">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"/></svg>
+                Add Scheduled Report
+              </button>
+            </div>
+            <div class="table-scroll">
+              <table class="grid-table" id="table-scheduled-list">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Report Name</th>
+                    <th>Frequency</th>
+                    <th>Recipients</th>
+                    <th>Next Run</th>
+                    <th>Status</th>
+                    <th class="th-act">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td class="td-bold">Sales Summary</td>
+                    <td>Monthly</td>
+                    <td class="td-mail">admin@udayaravi.com</td>
+                    <td class="td-mono">01-Sep-2026</td>
+                    <td><span class="badge-status-active">Active</span></td>
+                    <td class="td-act">
+                      <button class="t-btn btn-edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                      <button class="t-btn btn-trash" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="td-bold">Stock Report</td>
+                    <td>Weekly</td>
+                    <td class="td-mail">manager@udayaravi.com</td>
+                    <td class="td-mono">17-Aug-2026</td>
+                    <td><span class="badge-status-active">Active</span></td>
+                    <td class="td-act">
+                      <button class="t-btn btn-edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                      <button class="t-btn btn-trash" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td class="td-bold">Production Report</td>
+                    <td>Daily</td>
+                    <td class="td-mail">production@udayaravi.com</td>
+                    <td class="td-mono">14-Aug-2026</td>
+                    <td><span class="badge-status-active">Active</span></td>
+                    <td class="td-act">
+                      <button class="t-btn btn-edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                      <button class="t-btn btn-trash" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: QUICK GENERATE & EXPORT OPTIONS -->
+        <div class="actions-column">
+
+          <!-- Quick Generate Reports -->
+          <div class="action-card">
+            <div class="a-header">
+              <svg class="a-ic a-ic-yellow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+              <span>Quick Generate Reports</span>
+            </div>
+            <div class="quick-gen-grid">
+              <!-- Row 1 -->
+              <button class="q-btn q-green">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="q-ic"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+                <span>Sales Report</span>
+              </button>
+              <button class="q-btn q-blue">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="q-ic"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+                <span>Stock Report</span>
+              </button>
+
+              <!-- Row 2 -->
+              <button class="q-btn q-amber">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="q-ic"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+                <span>Production Report</span>
+              </button>
+              <button class="q-btn q-purple">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="q-ic"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/></svg>
+                <span>Payments Report</span>
+              </button>
+
+              <!-- Row 3 -->
+              <button class="q-btn q-teal">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="q-ic"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+                <span>Customer Report</span>
+              </button>
+              <button class="q-btn q-orange">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="q-ic"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/></svg>
+                <span>Supplier Report</span>
+              </button>
+
+              <!-- Row 4 -->
+              <button class="q-btn q-rose">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="q-ic"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+                <span>Employee Report</span>
+              </button>
+              <button class="q-btn q-slate">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="q-ic"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+                <span>Custom Report</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Export Options -->
+          <div class="action-card mt-2">
+            <div class="a-header">
+              <svg class="a-ic a-ic-yellow" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              <span>Export Options</span>
+            </div>
+            <div class="export-tiles-grid">
+              <!-- Excel -->
+              <button class="exp-tile exp-excel" id="exp-excel">
+                <div class="exp-icon-box">
+                  <span class="exp-badge">XX</span>
+                </div>
+                <span class="exp-name">Excel</span>
+              </button>
+
+              <!-- PDF -->
+              <button class="exp-tile exp-pdf" id="exp-pdf">
+                <div class="exp-icon-box">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/></svg>
+                </div>
+                <span class="exp-name">PDF</span>
+              </button>
+
+              <!-- CSV -->
+              <button class="exp-tile exp-csv" id="exp-csv">
+                <div class="exp-icon-box">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+                </div>
+                <span class="exp-name">CSV</span>
+              </button>
+
+              <!-- Print -->
+              <button class="exp-tile exp-print" id="exp-print">
+                <div class="exp-icon-box">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a1 1 0 001 1h8a1 1 0 001-1v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a1 1 0 00-1-1H6a1 1 0 00-1 1zm2 0h6v3H7V4zm-1 9H6v2h8v-2h-1a1 1 0 01-1 1H8a1 1 0 01-1-1zm7-3a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
+                </div>
+                <span class="exp-name">Print</span>
+              </button>
+            </div>
+            <div class="exp-caption">Generate and export customized reports in multiple formats.</div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+      <span class="sb-l">UDAYARAVI WEAVE MASTER &nbsp;|&nbsp; Reports Management</span>
+      <span class="sb-r">Build Better Weaves &nbsp;|&nbsp; <span id="sb-dt">13-Aug-2026 04:25 PM</span></span>
+    </div>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="reports.js"></script>
+</body>
+</html>

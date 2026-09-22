@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Udayaravi Weave Master</title>
+  <meta name="description" content="Daily loom production, stock, sales, payments and warp balance in one screen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="corporate-theme.css" />
+</head>
+<body>
+<div class="app-root">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="logo-block">
+      <img src="../../brain/a507fab7-2db5-406b-a76b-05c571fb76ea/.user_uploaded/media_1790079156110.png" alt="Udayaravi Creations" class="brand-logo-img" onerror="if(this.src.indexOf('logo.png')===-1)this.src='logo.png';" />
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item active" href="index.html" id="nav-dashboard">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+        <span data-i18n="nav_dashboard">Dashboard</span>
+      </a>
+      <a class="nav-item" href="production.html" id="nav-production">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+        <span data-i18n="nav_production">Production</span>
+      </a>
+      <a class="nav-item" href="stock.html" id="nav-stock">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_stock">Stock</span>
+      </a>
+      <a class="nav-item" href="salespay.html" id="nav-salespay">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+        <span data-i18n="nav_salespay">Sales &amp; Payments</span>
+      </a>
+      <a class="nav-item" href="reports.html" id="nav-reports">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_reports">Reports</span>
+      </a>
+      <a class="nav-item" href="customers.html" id="nav-customers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+        <span data-i18n="nav_customers">Customers</span>
+      </a>
+      <a class="nav-item" href="employees.html" id="nav-employees">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_employees">Employees</span>
+      </a>
+      <a class="nav-item" href="suppliers.html" id="nav-suppliers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/></svg>
+        <span data-i18n="nav_suppliers">Suppliers</span>
+      </a>
+      <a class="nav-item" href="settings.html" id="nav-settings">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_settings">Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="wm-label">WEAVE MASTER</div>
+      <div class="toggle-row">
+        <label class="tog">
+          <input type="checkbox" checked id="master-tog"/>
+          <span class="tog-track"></span>
+        </label>
+        <span class="tog-txt" id="tog-txt">ON</span>
+      </div>
+      <div class="tagline" data-i18n="tagline">Weaving Progress<br/>A Stronger Tomorrow</div>
+    </div>
+  </aside>
+
+  <!-- ======== MAIN ======== -->
+  <main class="main" style="overflow-y:auto; scrollbar-width:thin; padding:18px 24px; display:flex; flex-direction:column; gap:16px;">
+
+    <!-- TOP HEADER WITH CORPORATE PROFILE & ACTIONS -->
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; border-bottom:1px solid #1e293b; padding-bottom:14px;">
+      <div>
+        <h1 style="font-size:18px; font-weight:700; color:#f59e0b; margin-bottom:3px; letter-spacing:-0.01em;">Plant Operations Dashboard</h1>
+        <p style="font-size:12px; color:#94a3b8;">Real-time loom floor telemetry, inventory levels, and commercial ledger.</p>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:10px;">
+        <!-- Quiet Operational Status -->
+        <div class="factory-beacon">
+          <span class="beacon-pulse"></span>
+          <span id="active-looms-beacon">12 Looms Active</span>
+        </div>
+
+        <!-- Sleek Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="en" onclick="setAppLanguage('en')">EN</button>
+          <button class="lang-btn" data-lang="hi" onclick="setAppLanguage('hi')">हिन्दी</button>
+          <button class="lang-btn" data-lang="kn" onclick="setAppLanguage('kn')">ಕನ್ನಡ</button>
+        </div>
+
+        <!-- Corporate Action Button -->
+        <a href="salespay.html" class="btn-primary" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px; font-size:12px; padding:6px 14px;">
+          <span>+</span> Create Invoice
+        </a>
+      </div>
+    </div>
+
+    <!-- 4 CLEAN EXECUTIVE KPI CARDS -->
+    <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;">
+      <!-- Active Looms -->
+      <a href="production.html" style="text-decoration:none;" class="kpi-card">
+        <div class="kpi-title">
+          <span data-i18n="card_looms">Active Looms</span>
+          <span class="badge badge-success">85.7% Cap</span>
+        </div>
+        <div class="kpi-val" id="active-looms-kpi">12 <span style="font-size:15px; color:#64748b; font-weight:400;">/ 14</span></div>
+        <div class="kpi-sub">12 running normally &bull; 2 on maintenance</div>
+      </a>
+
+      <!-- Daily Revenue -->
+      <a href="salespay.html" style="text-decoration:none;" class="kpi-card">
+        <div class="kpi-title">
+          <span data-i18n="card_cash">Daily Receipts</span>
+          <span class="badge badge-success">+12.4%</span>
+        </div>
+        <div class="kpi-val">₹48,500</div>
+        <div class="kpi-sub">Target: ₹50,000 &bull; 97% reached</div>
+      </a>
+
+      <!-- Yarn Inventory -->
+      <a href="stock.html" style="text-decoration:none;" class="kpi-card">
+        <div class="kpi-title">
+          <span data-i18n="card_yarn">Yarn Stock</span>
+          <span class="badge badge-warning">2 Low</span>
+        </div>
+        <div class="kpi-val">142 <span style="font-size:14px; color:#64748b; font-weight:400;">Bags</span></div>
+        <div class="kpi-sub">Sufficient for 14 operational days</div>
+      </a>
+
+      <!-- Accounts Receivable -->
+      <a href="salespay.html" style="text-decoration:none;" class="kpi-card">
+        <div class="kpi-title">
+          <span data-i18n="card_pending">Receivables Due</span>
+          <span class="badge badge-danger">3 Overdue</span>
+        </div>
+        <div class="kpi-val">₹13,665</div>
+        <div class="kpi-sub">Pending collection across 3 buyers</div>
+      </a>
+    </div>
+
+    <!-- MAIN TWO COLUMNS: LOOM FLOOR & FINANCIAL ACTIVITY -->
+    <div style="display:grid; grid-template-columns:1.5fr 1fr; gap:14px; flex:1; min-height:0;">
+
+      <!-- LEFT: MACHINE STATUS OVERVIEW -->
+      <div class="panel" style="padding:14px 16px; display:flex; flex-direction:column; gap:12px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #1e293b; padding-bottom:8px;">
+          <div>
+            <div class="panel-title">Loom Production Units</div>
+            <div class="panel-sub">Real-time meter logs and assigned operators</div>
+          </div>
+          <a href="production.html" style="font-size:12px; color:#f59e0b; text-decoration:none; font-weight:500;">Floor View →</a>
+        </div>
+
+        <!-- Grid of Looms (Clean Rectangle Boxes without colored border lines) -->
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;" id="dashboard-loom-grid">
+          <!-- Loom 1 -->
+          <div class="loom-tile-simple running" id="loom-tile-1" style="background:#0c121e; border:1px solid #1e293b; border-radius:8px; padding:12px 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-num" style="font-weight:600; font-size:13.5px; color:#f8fafc;">Loom 01</span>
+              <span class="badge badge-success" id="loom-badge-1">Running</span>
+            </div>
+            <div style="font-size:11.5px; color:#94a3b8; margin:6px 0;">Cotton Saree 40s</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; padding:4px 0; border-top:1px solid #162032; border-bottom:1px solid #162032;">
+              <span class="loom-meters" style="font-weight:700; font-size:14px; color:#f8fafc;">420 m</span>
+              <span style="font-size:11.5px; color:#64748b;">Op: Ramesh</span>
+            </div>
+            <div>
+              <button class="btn-secondary" id="loom-btn-1" style="padding:5px 10px; font-size:11.5px; width:100%;" onclick="toggleLoom(1)">Pause</button>
+            </div>
+          </div>
+
+          <!-- Loom 2 -->
+          <div class="loom-tile-simple running" id="loom-tile-2" style="background:#0c121e; border:1px solid #1e293b; border-radius:8px; padding:12px 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-num" style="font-weight:600; font-size:13.5px; color:#f8fafc;">Loom 02</span>
+              <span class="badge badge-success" id="loom-badge-2">Running</span>
+            </div>
+            <div style="font-size:11.5px; color:#94a3b8; margin:6px 0;">Silk Saree Gold</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; padding:4px 0; border-top:1px solid #162032; border-bottom:1px solid #162032;">
+              <span class="loom-meters" style="font-weight:700; font-size:14px; color:#f8fafc;">310 m</span>
+              <span style="font-size:11.5px; color:#64748b;">Op: Suresh</span>
+            </div>
+            <div>
+              <button class="btn-secondary" id="loom-btn-2" style="padding:5px 10px; font-size:11.5px; width:100%;" onclick="toggleLoom(2)">Pause</button>
+            </div>
+          </div>
+
+          <!-- Loom 3 -->
+          <div class="loom-tile-simple stopped" id="loom-tile-3" style="background:#0c121e; border:1px solid #1e293b; border-radius:8px; padding:12px 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-num" style="font-weight:600; font-size:13.5px; color:#f8fafc;">Loom 03</span>
+              <span class="badge badge-danger" id="loom-badge-3">Maintenance</span>
+            </div>
+            <div style="font-size:11.5px; color:#94a3b8; margin:6px 0;">Warp Repaired</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; padding:4px 0; border-top:1px solid #162032; border-bottom:1px solid #162032;">
+              <span class="loom-meters" style="font-weight:700; font-size:14px; color:#64748b;">0 m</span>
+              <span style="font-size:11.5px; color:#f87171;">Op: Service</span>
+            </div>
+            <div>
+              <button class="btn-primary" id="loom-btn-3" style="padding:5px 10px; font-size:11.5px; width:100%;" onclick="toggleLoom(3)">Resume</button>
+            </div>
+          </div>
+
+          <!-- Loom 4 -->
+          <div class="loom-tile-simple running" id="loom-tile-4" style="background:#0c121e; border:1px solid #1e293b; border-radius:8px; padding:12px 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-num" style="font-weight:600; font-size:13.5px; color:#f8fafc;">Loom 04</span>
+              <span class="badge badge-success" id="loom-badge-4">Running</span>
+            </div>
+            <div style="font-size:11.5px; color:#94a3b8; margin:6px 0;">Poly Cotton 60s</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; padding:4px 0; border-top:1px solid #162032; border-bottom:1px solid #162032;">
+              <span class="loom-meters" style="font-weight:700; font-size:14px; color:#f8fafc;">285 m</span>
+              <span style="font-size:11.5px; color:#64748b;">Op: Ganesh</span>
+            </div>
+            <div>
+              <button class="btn-secondary" id="loom-btn-4" style="padding:5px 10px; font-size:11.5px; width:100%;" onclick="toggleLoom(4)">Pause</button>
+            </div>
+          </div>
+
+          <!-- Loom 5 -->
+          <div class="loom-tile-simple running" id="loom-tile-5" style="background:#0c121e; border:1px solid #1e293b; border-radius:8px; padding:12px 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-num" style="font-weight:600; font-size:13.5px; color:#f8fafc;">Loom 05</span>
+              <span class="badge badge-success" id="loom-badge-5">Running</span>
+            </div>
+            <div style="font-size:11.5px; color:#94a3b8; margin:6px 0;">Rayon Plain 30s</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; padding:4px 0; border-top:1px solid #162032; border-bottom:1px solid #162032;">
+              <span class="loom-meters" style="font-weight:700; font-size:14px; color:#f8fafc;">510 m</span>
+              <span style="font-size:11.5px; color:#64748b;">Op: Selvam</span>
+            </div>
+            <div>
+              <button class="btn-secondary" id="loom-btn-5" style="padding:5px 10px; font-size:11.5px; width:100%;" onclick="toggleLoom(5)">Pause</button>
+            </div>
+          </div>
+
+          <!-- Loom 6 -->
+          <div class="loom-tile-simple running" id="loom-tile-6" style="background:#0c121e; border:1px solid #1e293b; border-radius:8px; padding:12px 14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-num" style="font-weight:600; font-size:13.5px; color:#f8fafc;">Loom 06</span>
+              <span class="badge badge-success" id="loom-badge-6">Running</span>
+            </div>
+            <div style="font-size:11.5px; color:#94a3b8; margin:6px 0;">Zari Silk Border</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; padding:4px 0; border-top:1px solid #162032; border-bottom:1px solid #162032;">
+              <span class="loom-meters" style="font-weight:700; font-size:14px; color:#f8fafc;">190 m</span>
+              <span style="font-size:11.5px; color:#64748b;">Op: Vijay</span>
+            </div>
+            <div>
+              <button class="btn-secondary" id="loom-btn-6" style="padding:5px 10px; font-size:11.5px; width:100%;" onclick="toggleLoom(6)">Pause</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: PENDING INVOICES & WAREHOUSE BUFFER -->
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        
+        <!-- Outstanding Receivables Panel -->
+        <div class="panel" style="padding:14px 16px; display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #1e293b; padding-bottom:8px;">
+            <div>
+              <div class="panel-title">Pending Receivables</div>
+              <div class="panel-sub">Recent client invoices due for payment</div>
+            </div>
+            <a href="salespay.html" style="font-size:12px; color:#f59e0b; text-decoration:none; font-weight:500;">Ledger →</a>
+          </div>
+
+          <!-- Buyer Row 1 -->
+          <div style="display:flex; align-items:center; justify-content:space-between; background:#0d1422; border:1px solid #1e293b; border-radius:6px; padding:8px 10px;">
+            <div>
+              <div style="font-size:12.5px; font-weight:600; color:#f8fafc;">Venkatesh Textiles</div>
+              <div style="font-size:11px; color:#94a3b8;">Inv #1042 &bull; Net 15 days</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:13px; font-weight:600; color:#f8fafc;">₹18,500</span>
+              <button class="btn-secondary" style="padding:4px 8px; font-size:11px;" onclick="showSimpleToast('Payment ₹18,500 recorded.', 'success')">Record</button>
+            </div>
+          </div>
+
+          <!-- Buyer Row 2 -->
+          <div style="display:flex; align-items:center; justify-content:space-between; background:#0d1422; border:1px solid #1e293b; border-radius:6px; padding:8px 10px;">
+            <div>
+              <div style="font-size:12.5px; font-weight:600; color:#f8fafc;">Sri Krishna Fashions</div>
+              <div style="font-size:11px; color:#94a3b8;">Inv #1039 &bull; Due today</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:13px; font-weight:600; color:#f8fafc;">₹13,665</span>
+              <button class="btn-secondary" style="padding:4px 8px; font-size:11px;" onclick="showSimpleToast('Payment ₹13,665 recorded.', 'success')">Record</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Warehouse Raw Materials Status -->
+        <div class="panel" style="padding:14px 16px; display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #1e293b; padding-bottom:8px;">
+            <div>
+              <div class="panel-title">Raw Material Inventory</div>
+              <div class="panel-sub">Critical yarn counts &amp; godown stock</div>
+            </div>
+            <a href="stock.html" style="font-size:12px; color:#f59e0b; text-decoration:none; font-weight:500;">Godown →</a>
+          </div>
+
+          <!-- Material 1 -->
+          <div style="display:flex; align-items:center; justify-content:space-between; font-size:12px;">
+            <span style="color:#e2e8f0;">Cotton 40s (White)</span>
+            <span class="badge badge-success">45 Bags &bull; Optimal</span>
+          </div>
+
+          <!-- Material 2 -->
+          <div style="display:flex; align-items:center; justify-content:space-between; font-size:12px;">
+            <span style="color:#e2e8f0;">Silk Gold 20/22</span>
+            <span class="badge badge-danger">4 Bags &bull; Reorder</span>
+          </div>
+
+          <!-- Material 3 -->
+          <div style="display:flex; align-items:center; justify-content:space-between; font-size:12px;">
+            <span style="color:#e2e8f0;">Zari Metallic Thread</span>
+            <span class="badge badge-warning">28 Spools &bull; Moderate</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CLEAN CORPORATE FOOTER SUMMARY -->
+    <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid #1e293b; padding-top:12px; font-size:11.5px; color:#64748b;">
+      <div>Plant Location: <strong>Salem Weaving Complex &bull; Unit 01</strong></div>
+      <div>Shift: <strong>Shift A (08:00 - 20:00) &bull; Supervisor: K. Senthil</strong></div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Helper script for Loom Toggles on Dashboard -->
+<script>
+let activeLoomCount = 12;
+
+function toggleLoom(id) {
+  const tile = document.getElementById('loom-tile-' + id);
+  if (!tile) return;
+  
+  const badge = document.getElementById('loom-badge-' + id) || tile.querySelector('.badge');
+  const btn = document.getElementById('loom-btn-' + id) || tile.querySelector('button');
+  const isRunning = tile.classList.contains('running');
+  
+  if (isRunning) {
+    // Switch to Paused
+    tile.classList.remove('running');
+    tile.classList.add('paused');
+    
+    if (badge) {
+      badge.className = 'badge badge-warning';
+      badge.textContent = 'Paused';
+    }
+    if (btn) {
+      btn.className = 'btn-primary';
+      btn.textContent = 'Resume';
+    }
+    
+    activeLoomCount = Math.max(0, activeLoomCount - 1);
+    updateDashboardLoomCounters();
+    
+    if (typeof showSimpleToast === 'function') {
+      showSimpleToast('Loom 0' + id + ' Paused', 'info');
+    }
+  } else {
+    // Switch to Running
+    tile.classList.remove('paused');
+    tile.classList.remove('stopped');
+    tile.classList.add('running');
+    
+    if (badge) {
+      badge.className = 'badge badge-success';
+      badge.textContent = 'Running';
+    }
+    if (btn) {
+      btn.className = 'btn-secondary';
+      btn.textContent = 'Pause';
+    }
+    
+    activeLoomCount = Math.min(14, activeLoomCount + 1);
+    updateDashboardLoomCounters();
+    
+    if (typeof showSimpleToast === 'function') {
+      showSimpleToast('Loom 0' + id + ' Resumed & Running', 'success');
+    }
+  }
+}
+
+function updateDashboardLoomCounters() {
+  const beaconEl = document.getElementById('active-looms-beacon');
+  if (beaconEl) {
+    beaconEl.textContent = activeLoomCount + ' Looms Active';
+  }
+  const kpiEl = document.getElementById('active-looms-kpi');
+  if (kpiEl) {
+    kpiEl.innerHTML = activeLoomCount + ' <span style="font-size:15px; color:#64748b; font-weight:400;">/ 14</span>';
+  }
+}
+</script>
+
+<script src="i18n.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings — Udayaravi Weave Master</title>
+  <meta name="description" content="Manage system preferences, users, roles, security, notifications and more."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="settings.css"/>
+  <link rel="stylesheet" href="corporate-theme.css"/>
+</head>
+<body>
+<div class="app-root">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="logo-block">
+      <img src="../../brain/a507fab7-2db5-406b-a76b-05c571fb76ea/.user_uploaded/media_1790079156110.png" alt="Udayaravi Creations" class="brand-logo-img" onerror="if(this.src.indexOf('logo.png')===-1)this.src='logo.png';" />
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="index.html" id="nav-dashboard">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+        <span data-i18n="nav_dashboard">Dashboard</span>
+      </a>
+      <a class="nav-item" href="production.html" id="nav-production">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+        <span data-i18n="nav_production">Production</span>
+      </a>
+      <a class="nav-item" href="stock.html" id="nav-stock">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_stock">Stock</span>
+      </a>
+      <a class="nav-item" href="salespay.html" id="nav-salespay">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+        <span data-i18n="nav_sales">Sales &amp; Payments</span>
+      </a>
+      <a class="nav-item" href="reports.html" id="nav-reports">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_reports">Reports</span>
+      </a>
+      <a class="nav-item" href="customers.html" id="nav-customers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+        <span data-i18n="nav_customers">Customers</span>
+      </a>
+      <a class="nav-item" href="employees.html" id="nav-employees">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_employees">Employees</span>
+      </a>
+      <a class="nav-item" href="suppliers.html" id="nav-suppliers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/></svg>
+        <span data-i18n="nav_suppliers">Suppliers</span>
+      </a>
+      <a class="nav-item active" href="settings.html" id="nav-settings">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_settings">Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="wm-label">WEAVE MASTER</div>
+      <div class="toggle-row">
+        <label class="tog">
+          <input type="checkbox" checked id="master-tog"/>
+          <span class="tog-track"></span>
+        </label>
+        <span class="tog-txt" id="tog-txt">ON</span>
+      </div>
+      <div class="tagline">Weaving Progress<br/>A Stronger Tomorrow</div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN WRAPPER ================= -->
+  <div class="main-wrapper">
+    <main class="main">
+
+      <!-- PAGE HEADER -->
+      <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:24px;">
+        <div class="ph-left">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
+            <h1 class="page-title" style="margin:0;font-size:18px;font-weight:700;color:#f59e0b;letter-spacing:-0.01em;">System &amp; Application Settings</h1>
+            <span class="badge-success" style="font-size:12px;padding:4px 10px;">Operational</span>
+          </div>
+          <p class="page-sub" style="margin:0;font-size:13px;color:#94a3b8;">
+            Enterprise parameters, organization profile, user permissions, notifications, and localization settings.
+          </p>
+        </div>
+        <div class="ph-right" style="display:flex;align-items:center;gap:12px;">
+          <div class="lang-switcher" id="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setAppLanguage('en')">EN</button>
+            <button class="lang-btn" data-lang="hi" onclick="setAppLanguage('hi')">HI</button>
+            <button class="lang-btn" data-lang="kn" onclick="setAppLanguage('kn')">KN</button>
+          </div>
+          <button class="btn-primary" onclick="showSimpleToast('Settings saved successfully', 'success')">
+            Save Changes
+          </button>
+        </div>
+      </div>
+
+      <!-- DISPLAY & ACCESSIBILITY PREFERENCES -->
+      <div class="corporate-card" style="margin-bottom:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e293b;">
+          <div>
+            <h2 style="font-size:15px;font-weight:600;color:#f8fafc;margin:0;">Interface &amp; Accessibility Preferences</h2>
+            <span style="font-size:12px;color:#94a3b8;">Display scaling, primary language, and high contrast options for shop-floor operators</span>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:16px;">
+          <!-- 1. Language -->
+          <div style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:14px;">
+            <div style="font-size:12px;font-weight:600;color:#94a3b8;margin-bottom:10px;">SYSTEM LANGUAGE</div>
+            <div style="display:flex;gap:6px;">
+              <button onclick="setAppLanguage('en'); showSimpleToast('Language set to English', 'success');" class="btn-secondary" style="flex:1;padding:8px 4px;font-size:12px;">
+                English
+              </button>
+              <button onclick="setAppLanguage('hi'); showSimpleToast('भाषा हिन्दी चुनी गई', 'success');" class="btn-secondary" style="flex:1;padding:8px 4px;font-size:12px;">
+                हिन्दी
+              </button>
+              <button onclick="setAppLanguage('kn'); showSimpleToast('ಭಾಷೆ ಕನ್ನಡ ಆಯ್ಕೆ ಮಾಡಲಾಗಿದೆ', 'success');" class="btn-secondary" style="flex:1;padding:8px 4px;font-size:12px;">
+                ಕನ್ನಡ
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Text Scaling -->
+          <div style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:14px;">
+            <div style="font-size:12px;font-weight:600;color:#94a3b8;margin-bottom:10px;">FONT SCALING</div>
+            <div style="display:flex;gap:6px;">
+              <button onclick="document.body.style.fontSize='14px'; showSimpleToast('Text Size: Normal', 'info');" class="btn-secondary" style="flex:1;padding:8px 4px;font-size:12px;">
+                Default
+              </button>
+              <button onclick="document.body.style.fontSize='16px'; showSimpleToast('Text Size: Large', 'success');" class="btn-secondary" style="flex:1;padding:8px 4px;font-size:12px;">
+                +10%
+              </button>
+              <button onclick="document.body.style.fontSize='18px'; showSimpleToast('Text Size: Extra Large', 'success');" class="btn-secondary" style="flex:1;padding:8px 4px;font-size:12px;">
+                +20%
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. High Contrast -->
+          <div style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:14px;">
+            <div style="font-size:12px;font-weight:600;color:#94a3b8;margin-bottom:10px;">HIGH CONTRAST MODE</div>
+            <button onclick="document.body.classList.toggle('high-contrast-mode'); showSimpleToast('Contrast mode toggled', 'success');" class="btn-secondary" style="width:100%;padding:8px 12px;font-size:12px;">
+              Toggle Contrast Mode
+            </button>
+          </div>
+
+          <!-- 4. Audio Feedback -->
+          <div style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:14px;">
+            <div style="font-size:12px;font-weight:600;color:#94a3b8;margin-bottom:10px;">TOUCH AUDIO FEEDBACK</div>
+            <button onclick="showSimpleToast('Audio feedback enabled', 'success');" class="btn-secondary" style="width:100%;padding:8px 12px;font-size:12px;">
+              Audio Feedback Enabled
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-TABS ROW (PILLS) -->
+      <div class="subtabs-bar">
+        <button class="subtab-btn active">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+          General
+        </button>
+        <button class="subtab-btn">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+          Users &amp; Roles
+        </button>
+        <button class="subtab-btn">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4zm3 1h2v2H7V5zm4 0h2v2h-2V5zm-4 4h2v2H7V9zm4 0h2v2h-2V9zm-4 4h2v2H7v-2zm4 0h2v2h-2v-2z" clip-rule="evenodd"/></svg>
+          Company
+        </button>
+        <button class="subtab-btn">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/></svg>
+          Notifications
+        </button>
+        <button class="subtab-btn">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"/></svg>
+          Integrations
+        </button>
+        <button class="subtab-btn">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"/><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"/><path d="M17 4c0 1.657-3.134 3-7 3S3 5.657 3 4s3.134-3 7-3 7 1.343 7 3z"/></svg>
+          Backup &amp; Data
+        </button>
+        <button class="subtab-btn">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+          System
+        </button>
+        <button class="subtab-btn">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd"/></svg>
+          Appearance
+        </button>
+      </div>
+
+      <!-- ROW 1: COMPANY INFORMATION + SYSTEM PREFERENCES -->
+      <div class="row-top">
+
+        <!-- COMPANY INFORMATION -->
+        <div class="set-panel">
+          <div class="sp-header">
+            <div class="sp-title-wrap">
+              <svg viewBox="0 0 20 20" fill="#22c55e" width="15" height="15"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+              <div>
+                <div class="sp-title">Company Information</div>
+                <div class="sp-sub">Update your company details and branding.</div>
+              </div>
+            </div>
+            <button class="btn-sp-action" id="btn-save-company">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l6-6a1 1 0 00-1.414-1.414L11 12.586l-3.293-3.293z"/></svg>
+              Save Changes
+            </button>
+          </div>
+
+          <div class="company-body">
+            <!-- LOGO UPLOAD BOX -->
+            <div class="logo-uploader-col">
+              <span class="fg-lbl">Company Logo</span>
+              <div class="logo-preview-box">
+                <img src="../../brain/a507fab7-2db5-406b-a76b-05c571fb76ea/.user_uploaded/media_1790079156110.png" alt="Udayaravi Creations" class="settings-logo-img" onerror="if(this.src.indexOf('logo.png')===-1)this.src='logo.png';" />
+              </div>
+              <button class="btn-change-logo" id="btn-change-logo">Change Logo</button>
+              <span class="logo-subtext">PNG, JPG (Max 2MB)<br/>Recommended: 512 x 512</span>
+            </div>
+
+            <!-- FORM FIELDS -->
+            <div class="form-grid-company">
+              <div class="fg-item">
+                <span class="fg-lbl">Company Name</span>
+                <input type="text" class="fg-input" value="Udayaravi Weave Master"/>
+              </div>
+              <div class="fg-item">
+                <span class="fg-lbl">Website</span>
+                <input type="text" class="fg-input" value="https://www.udayaravi.com"/>
+              </div>
+              <div class="fg-item">
+                <span class="fg-lbl">Email</span>
+                <input type="email" class="fg-input" value="info@udayaravi.com"/>
+              </div>
+              <div class="fg-item">
+                <span class="fg-lbl">GST Number</span>
+                <input type="text" class="fg-input" value="33AAACS1234F1Z5"/>
+              </div>
+              <div class="fg-item">
+                <span class="fg-lbl">Phone</span>
+                <input type="text" class="fg-input" value="+91 98765 43210"/>
+              </div>
+              <div class="fg-item">
+                <span class="fg-lbl">PAN Number</span>
+                <input type="text" class="fg-input" value="AAACS1234F"/>
+              </div>
+              <div class="fg-item full">
+                <span class="fg-lbl">Address</span>
+                <input type="text" class="fg-input" value="123, Industrial Area, Erode, Tamil Nadu - 638001"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SYSTEM PREFERENCES -->
+        <div class="set-panel">
+          <div class="sp-header">
+            <div class="sp-title-wrap">
+              <svg viewBox="0 0 20 20" fill="#f0a500" width="15" height="15"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+              <div>
+                <div class="sp-title">System Preferences</div>
+                <div class="sp-sub">Basic system settings and preferences.</div>
+              </div>
+            </div>
+            <button class="btn-sp-outline" id="btn-save-prefs">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l6-6a1 1 0 00-1.414-1.414L11 12.586l-3.293-3.293z"/></svg>
+              Save Preferences
+            </button>
+          </div>
+
+          <div class="form-grid-prefs">
+            <div class="fg-item">
+              <span class="fg-lbl">Default Currency</span>
+              <select class="fg-select">
+                <option selected>Indian Rupee (₹)</option>
+                <option>US Dollar ($)</option>
+                <option>Euro (€)</option>
+              </select>
+            </div>
+            <div class="fg-item">
+              <span class="fg-lbl">Language</span>
+              <select class="fg-select">
+                <option selected>English</option>
+                <option>Tamil</option>
+                <option>Telugu</option>
+                <option>Hindi</option>
+              </select>
+            </div>
+            <div class="fg-item">
+              <span class="fg-lbl">Date Format</span>
+              <select class="fg-select">
+                <option selected>DD-MMM-YYYY</option>
+                <option>DD/MM/YYYY</option>
+                <option>YYYY-MM-DD</option>
+              </select>
+            </div>
+            <div class="fg-item">
+              <span class="fg-lbl">Number Format</span>
+              <select class="fg-select">
+                <option selected>1,00,000.00</option>
+                <option>100,000.00</option>
+              </select>
+            </div>
+            <div class="fg-item full">
+              <span class="fg-lbl">Time Zone</span>
+              <select class="fg-select">
+                <option selected>(GMT+05:30) India Standard Time (IST)</option>
+                <option>(GMT+00:00) UTC</option>
+                <option>(GMT+04:00) Gulf Standard Time</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ROW 2: USERS & ROLES | NOTIFICATIONS | INTEGRATIONS -->
+      <div class="row-middle">
+
+        <!-- USERS & ROLES -->
+        <div class="set-panel">
+          <div class="sp-header">
+            <div class="sp-title-wrap">
+              <svg viewBox="0 0 20 20" fill="#a855f7" width="15" height="15"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+              <div>
+                <div class="sp-title">Users &amp; Roles</div>
+                <div class="sp-sub">Manage users, roles and permissions.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ur-stats-row">
+            <div class="ur-stat-card ur-sc-blue">
+              <svg viewBox="0 0 20 20" fill="#38bdf8" width="16" height="16"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+              <div class="ur-stat-info">
+                <span class="ur-num">12</span>
+                <span class="ur-lbl">Total Users</span>
+              </div>
+            </div>
+            <div class="ur-stat-card ur-sc-green">
+              <svg viewBox="0 0 20 20" fill="#4ade80" width="16" height="16"><path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clip-rule="evenodd"/></svg>
+              <div class="ur-stat-info">
+                <span class="ur-num">5</span>
+                <span class="ur-lbl">Roles</span>
+              </div>
+            </div>
+            <div class="ur-stat-card ur-sc-amber">
+              <svg viewBox="0 0 20 20" fill="#fbbf24" width="16" height="16"><path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd"/></svg>
+              <div class="ur-stat-info">
+                <span class="ur-num">127</span>
+                <span class="ur-lbl">Permissions</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ur-btns-row">
+            <button class="btn-ur btn-ur-blue">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+              Manage Users
+            </button>
+            <button class="btn-ur btn-ur-green">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944z" clip-rule="evenodd"/></svg>
+              Manage Roles
+            </button>
+            <button class="btn-ur btn-ur-amber">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8z" clip-rule="evenodd"/></svg>
+              Role Permissions
+            </button>
+          </div>
+        </div>
+
+        <!-- NOTIFICATIONS -->
+        <div class="set-panel">
+          <div class="sp-header">
+            <div class="sp-title-wrap">
+              <svg viewBox="0 0 20 20" fill="#ef4444" width="15" height="15"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/></svg>
+              <div>
+                <div class="sp-title">Notifications</div>
+                <div class="sp-sub">Configure email, SMS and in-app notifications.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="notif-toggles-list">
+            <div class="notif-toggle-row">
+              <div class="ntr-left">
+                <svg viewBox="0 0 20 20" fill="#c084fc" width="13" height="13"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                <span>Email Notifications</span>
+              </div>
+              <label class="sw-toggle"><input type="checkbox" checked/><span class="sw-track"></span></label>
+            </div>
+
+            <div class="notif-toggle-row">
+              <div class="ntr-left">
+                <svg viewBox="0 0 20 20" fill="#4ade80" width="13" height="13"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/></svg>
+                <span>SMS Notifications</span>
+              </div>
+              <label class="sw-toggle"><input type="checkbox" checked/><span class="sw-track"></span></label>
+            </div>
+
+            <div class="notif-toggle-row">
+              <div class="ntr-left">
+                <svg viewBox="0 0 20 20" fill="#fb923c" width="13" height="13"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+                <span>Low Stock Alerts</span>
+              </div>
+              <label class="sw-toggle"><input type="checkbox" checked/><span class="sw-track"></span></label>
+            </div>
+
+            <div class="notif-toggle-row">
+              <div class="ntr-left">
+                <svg viewBox="0 0 20 20" fill="#38bdf8" width="13" height="13"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/></svg>
+                <span>Payment Reminders</span>
+              </div>
+              <label class="sw-toggle"><input type="checkbox" checked/><span class="sw-track"></span></label>
+            </div>
+
+            <div class="notif-toggle-row">
+              <div class="ntr-left">
+                <svg viewBox="0 0 20 20" fill="#facc15" width="13" height="13"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/></svg>
+                <span>New Customer Alerts</span>
+              </div>
+              <label class="sw-toggle"><input type="checkbox"/><span class="sw-track"></span></label>
+            </div>
+          </div>
+
+          <button class="btn-cfg-notif" id="btn-cfg-notif">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+            Configure Notifications
+          </button>
+        </div>
+
+        <!-- INTEGRATIONS -->
+        <div class="set-panel">
+          <div class="sp-header">
+            <div class="sp-title-wrap">
+              <svg viewBox="0 0 20 20" fill="#c084fc" width="15" height="15"><path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"/></svg>
+              <div>
+                <div class="sp-title">Integrations</div>
+                <div class="sp-sub">Connect with third-party services.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="integrations-list">
+            <!-- Tally -->
+            <div class="integ-item">
+              <div class="integ-left">
+                <div class="integ-icon" style="background:rgba(239,68,68,.2);color:#ef4444;font-size:9px;font-weight:800;">T</div>
+                <span class="integ-name">Tally Integration</span>
+              </div>
+              <span class="badge-connected">Connected &gt;</span>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="integ-item">
+              <div class="integ-left">
+                <div class="integ-icon" style="background:rgba(34,197,94,.2);color:#22c55e;">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7z" clip-rule="evenodd"/></svg>
+                </div>
+                <span class="integ-name">WhatsApp API</span>
+              </div>
+              <span class="badge-not-connected">Not Connected &gt;</span>
+            </div>
+
+            <!-- Email (SMTP) -->
+            <div class="integ-item">
+              <div class="integ-left">
+                <div class="integ-icon" style="background:rgba(2,132,199,.2);color:#38bdf8;">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                </div>
+                <span class="integ-name">Email (SMTP)</span>
+              </div>
+              <span class="badge-connected">Connected &gt;</span>
+            </div>
+
+            <!-- Payment Gateway -->
+            <div class="integ-item">
+              <div class="integ-left">
+                <div class="integ-icon" style="background:rgba(245,158,11,.2);color:#fbbf24;">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/></svg>
+                </div>
+                <span class="integ-name">Payment Gateway</span>
+              </div>
+              <span class="badge-not-connected">Not Connected &gt;</span>
+            </div>
+
+            <!-- SMS Gateway -->
+            <div class="integ-item">
+              <div class="integ-left">
+                <div class="integ-icon" style="background:rgba(234,179,8,.2);color:#facc15;">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"/></svg>
+                </div>
+                <span class="integ-name">SMS Gateway</span>
+              </div>
+              <span class="badge-not-connected">Not Connected &gt;</span>
+            </div>
+          </div>
+
+          <button class="btn-manage-integ" id="btn-manage-integ">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+            Manage Integrations
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ROW 3: BACKUP & DATA | SYSTEM | APPEARANCE -->
+      <div class="row-bottom">
+
+        <!-- BACKUP & DATA -->
+        <div class="set-panel">
+          <div class="sp-header">
+            <div class="sp-title-wrap">
+              <svg viewBox="0 0 20 20" fill="#00b4d8" width="15" height="15"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"/><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"/><path d="M17 4c0 1.657-3.134 3-7 3S3 5.657 3 4s3.134-3 7-3 7 1.343 7 3z"/></svg>
+              <div>
+                <div class="sp-title">Backup &amp; Data</div>
+                <div class="sp-sub">Manage backups and data settings.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="backup-body">
+            <div class="backup-left">
+              <svg viewBox="0 0 20 20" fill="#22c55e" width="18" height="18"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+              <div class="bk-status-info">
+                <span style="font-size:9.5px;color:var(--text2);">Last Backup</span>
+                <span class="bk-time">12-Aug-2026, 02:30 AM</span>
+                <span class="bk-succ">Status: Success</span>
+                <button class="btn-create-bk" id="btn-create-bk">Create Backup</button>
+              </div>
+            </div>
+
+            <div class="backup-right">
+              <div class="auto-bk-row">
+                <span>Auto Backup</span>
+                <label class="sw-toggle"><input type="checkbox" checked/><span class="sw-track"></span></label>
+              </div>
+              <select class="fg-select" style="min-width:90px;">
+                <option selected>Daily</option>
+                <option>Weekly</option>
+                <option>Monthly</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- SYSTEM MAINTENANCE -->
+        <div class="set-panel">
+          <div class="sp-header">
+            <div class="sp-title-wrap">
+              <svg viewBox="0 0 20 20" fill="#38bdf8" width="15" height="15"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+              <div>
+                <div class="sp-title">System</div>
+                <div class="sp-sub">System configuration and maintenance.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sys-tiles-grid">
+            <div class="sys-tile st-orange">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+              <span class="st-txt">Clear Cache</span>
+            </div>
+
+            <div class="sys-tile st-blue">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+              <span class="st-txt">System Logs</span>
+            </div>
+
+            <div class="sys-tile st-purple">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z"/><path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z"/><path d="M17 4c0 1.657-3.134 3-7 3S3 5.657 3 4s3.134-3 7-3 7 1.343 7 3z"/></svg>
+              <span class="st-txt">Database Tools</span>
+            </div>
+
+            <div class="sys-tile st-red">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+              <span class="st-txt">Maintenance Mode</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- APPEARANCE -->
+        <div class="set-panel">
+          <div class="sp-header">
+            <div class="sp-title-wrap">
+              <svg viewBox="0 0 20 20" fill="#f0a500" width="15" height="15"><path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd"/></svg>
+              <div>
+                <div class="sp-title">Appearance</div>
+                <div class="sp-sub">Customize the look and feel of the system.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="app-body">
+            <div class="app-form">
+              <div class="fg-item">
+                <span class="fg-lbl">Theme Mode</span>
+                <select class="fg-select" style="min-width:85px;">
+                  <option selected>Dark</option>
+                  <option>Light</option>
+                </select>
+              </div>
+
+              <div class="fg-item">
+                <span class="fg-lbl">Primary Color</span>
+                <div class="swatch-picker">
+                  <div class="swatch-box"></div>
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="10" height="10" style="color:var(--text2);"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn-save-app" id="btn-save-app">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clip-rule="evenodd"/></svg>
+              Save Appearance
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+      <span class="sb-l">UDAYARAVI WEAVE MASTER &nbsp;|&nbsp; Settings</span>
+      <span class="sb-r">Build Better Weaves &nbsp;|&nbsp; <span id="sb-dt">13-Aug-2026 04:25 PM</span></span>
+    </div>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="settings.js"></script>
+</body>
+</html>

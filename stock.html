@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stock Management — Udayaravi Weave Master</title>
+  <meta name="description" content="Maintain raw materials, yarns, fabrics and other inventory with real-time stock levels."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="stock.css"/>
+  <link rel="stylesheet" href="corporate-theme.css"/>
+</head>
+<body>
+<div class="app-root">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="logo-block">
+      <img src="../../brain/a507fab7-2db5-406b-a76b-05c571fb76ea/.user_uploaded/media_1790079156110.png" alt="Udayaravi Creations" class="brand-logo-img" onerror="if(this.src.indexOf('logo.png')===-1)this.src='logo.png';" />
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="index.html" id="nav-dashboard">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+        <span data-i18n="nav_dashboard">Dashboard</span>
+      </a>
+      <a class="nav-item" href="production.html" id="nav-production">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+        <span data-i18n="nav_production">Production</span>
+      </a>
+      <a class="nav-item active" href="stock.html" id="nav-stock">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_stock">Stock</span>
+      </a>
+      <a class="nav-item" href="salespay.html" id="nav-salespay">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+        <span data-i18n="nav_salespay">Sales &amp; Payments</span>
+      </a>
+      <a class="nav-item" href="reports.html" id="nav-reports">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_reports">Reports</span>
+      </a>
+      <a class="nav-item" href="customers.html" id="nav-customers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+        <span data-i18n="nav_customers">Customers</span>
+      </a>
+      <a class="nav-item" href="employees.html" id="nav-employees">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_employees">Employees</span>
+      </a>
+      <a class="nav-item" href="suppliers.html" id="nav-suppliers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/></svg>
+        <span data-i18n="nav_suppliers">Suppliers</span>
+      </a>
+      <a class="nav-item" href="settings.html" id="nav-settings">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_settings">Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="wm-label">WEAVE MASTER</div>
+      <div class="toggle-row">
+        <label class="tog">
+          <input type="checkbox" checked id="master-tog"/>
+          <span class="tog-track"></span>
+        </label>
+        <span class="tog-txt" id="tog-txt">ON</span>
+      </div>
+      <div class="tagline">Weaving Progress<br/>A Stronger Tomorrow</div>
+    </div>
+  </aside>
+
+  <!-- ======= MAIN WRAPPER ======= -->
+  <div class="main-wrapper">
+    <main class="main" style="padding:18px 24px; display:flex; flex-direction:column; gap:16px;">
+
+      <!-- PAGE HEADER -->
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; border-bottom:1px solid #1e293b; padding-bottom:14px;">
+        <div>
+          <h1 style="font-size:18px; font-weight:700; color:#f59e0b; margin-bottom:3px; letter-spacing:-0.01em;">Inventory &amp; Warehouse Management</h1>
+          <p style="font-size:12px; color:#94a3b8;">Real-time raw materials, yarn valuation, and reorder advisory.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <!-- Quiet Factory Status -->
+          <div class="factory-beacon">
+            <span class="beacon-pulse"></span>
+            <span>125 Active SKUs</span>
+          </div>
+
+          <!-- Multi-language Switcher -->
+          <div class="lang-switcher" id="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setAppLanguage('en')">EN</button>
+            <button class="lang-btn" data-lang="hi" onclick="setAppLanguage('hi')">हिन्दी</button>
+            <button class="lang-btn" data-lang="kn" onclick="setAppLanguage('kn')">ಕನ್ನಡ</button>
+          </div>
+
+          <button class="btn-primary" id="btn-add-item-top" style="padding:6px 14px;" onclick="quickAddStockItem()">
+            + Add Stock Item
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 CLEAN EXECUTIVE KPI CARDS -->
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;">
+        <!-- Total Items -->
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Total SKUs</span>
+            <span class="badge badge-info">Inventory</span>
+          </div>
+          <div class="kpi-val" id="stat-total-items">125 <span style="font-size:14px; color:#64748b; font-weight:400;">items</span></div>
+          <div class="kpi-sub">Yarn, Silk, Dyes &amp; Packaging</div>
+        </div>
+
+        <!-- In Stock (Good) -->
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Optimal Stock</span>
+            <span class="badge badge-success">78% Buffer</span>
+          </div>
+          <div class="kpi-val" id="stat-instock-items">98 <span style="font-size:14px; color:#64748b; font-weight:400;">SKUs</span></div>
+          <div class="kpi-sub">Production ready for next 30 days</div>
+        </div>
+
+        <!-- Low Stock (Warning) -->
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Reorder Advisory</span>
+            <span class="badge badge-warning">Action Req</span>
+          </div>
+          <div class="kpi-val" id="stat-low-items">18 <span style="font-size:14px; color:#64748b; font-weight:400;">SKUs</span></div>
+          <div class="kpi-sub">Approaching minimum safe buffer</div>
+        </div>
+
+        <!-- Empty Stock (Alert) -->
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Critical Deficit</span>
+            <span class="badge badge-danger">Urgent</span>
+          </div>
+          <div class="kpi-val" id="stat-out-items">9 <span style="font-size:14px; color:#64748b; font-weight:400;">SKUs</span></div>
+          <div class="kpi-sub">Purchase order needed immediately</div>
+        </div>
+      </div>
+
+      <!-- WAREHOUSE MATERIAL BATCHES -->
+      <div class="panel" style="padding:16px; margin-bottom:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:1px solid #1e293b; padding-bottom:10px;">
+          <div>
+            <div class="panel-title">Warehouse Material Inventory</div>
+            <div class="panel-sub">Capacity levels, safety buffers, and quick inventory adjustment</div>
+          </div>
+          <div style="display:flex; gap:8px;">
+            <button class="btn-secondary" onclick="quickAddStockItem()" style="padding:6px 12px;">+ Add Item</button>
+            <button class="btn-primary" onclick="showSimpleToast('Stock report generated.', 'success')" style="padding:6px 12px;">Export Audit</button>
+          </div>
+        </div>
+
+        <!-- 6 Visual Stock Items Grid -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:14px;" id="godown-visual-rack">
+          <!-- Item 1: Cotton Yarn 20s -->
+          <div class="loom-tile-simple" style="border-left:3px solid #10b981;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12px; font-weight:600; color:#f8fafc;">Cotton Yarn 20s</span>
+              <span class="badge badge-success">83% In Stock</span>
+            </div>
+            <div style="font-size:11px; color:#64748b; margin-top:2px;">CODE: RM-001 &bull; RACK A-1</div>
+            <div style="margin:10px 0 6px 0;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; color:#cbd5e1; margin-bottom:4px;">
+                <span>Available: <strong style="color:#34d399;" id="godown-val-1">1,250</strong> kg</span>
+                <span style="color:#64748b;">Min: 500 kg</span>
+              </div>
+              <div style="height:6px; background:#0b1320; border-radius:3px; overflow:hidden;">
+                <div style="height:100%; width:83%; background:#10b981; border-radius:3px;" id="godown-bar-1"></div>
+              </div>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:10px;">
+              <button class="btn-primary" style="flex:1; padding:4px 8px; font-size:11px;" onclick="adjustGodownStock('godown-val-1', 'godown-bar-1', 50, 'Cotton Yarn 20s')">
+                + 50 kg (Inflow)
+              </button>
+              <button class="btn-secondary" style="flex:1; padding:4px 8px; font-size:11px;" onclick="adjustGodownStock('godown-val-1', 'godown-bar-1', -50, 'Cotton Yarn 20s')">
+                - 50 kg (Issue)
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 2: Cotton Yarn 40s (Low Stock) -->
+          <div class="loom-tile-simple" style="border-left:3px solid #f59e0b;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12px; font-weight:600; color:#f8fafc;">Cotton Yarn 40s</span>
+              <span class="badge badge-warning">Low Buffer (32%)</span>
+            </div>
+            <div style="font-size:11px; color:#64748b; margin-top:2px;">CODE: RM-002 &bull; RACK A-2</div>
+            <div style="margin:10px 0 6px 0;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; color:#cbd5e1; margin-bottom:4px;">
+                <span>Available: <strong style="color:#fbbf24;" id="godown-val-2">320</strong> kg</span>
+                <span style="color:#f59e0b;">Min: 500 kg</span>
+              </div>
+              <div style="height:6px; background:#0b1320; border-radius:3px; overflow:hidden;">
+                <div style="height:100%; width:32%; background:#f59e0b; border-radius:3px;" id="godown-bar-2"></div>
+              </div>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:10px;">
+              <button class="btn-primary" style="flex:1; padding:4px 8px; font-size:11px;" onclick="adjustGodownStock('godown-val-2', 'godown-bar-2', 50, 'Cotton Yarn 40s')">
+                + 50 kg (Inflow)
+              </button>
+              <button class="btn-secondary" style="flex:1; padding:4px 8px; font-size:11px;" onclick="adjustGodownStock('godown-val-2', 'godown-bar-2', -50, 'Cotton Yarn 40s')">
+                - 50 kg (Issue)
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 3: Silk Yarn (Out of stock) -->
+          <div class="loom-tile-simple" style="border-left:3px solid #ef4444;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12px; font-weight:600; color:#f8fafc;">Pure Silk Yarn</span>
+              <span class="badge badge-danger">Out of Stock</span>
+            </div>
+            <div style="font-size:11px; color:#64748b; margin-top:2px;">CODE: RM-003 &bull; RACK S-1</div>
+            <div style="margin:10px 0 6px 0;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; color:#cbd5e1; margin-bottom:4px;">
+                <span>Available: <strong style="color:#f87171;" id="godown-val-3">0</strong> kg</span>
+                <span style="color:#f87171; font-weight:500;">Critical buffer</span>
+              </div>
+              <div style="height:6px; background:#0b1320; border-radius:3px; overflow:hidden;">
+                <div style="height:100%; width:0%; background:#ef4444; border-radius:3px;" id="godown-bar-3"></div>
+              </div>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:10px;">
+              <button class="btn-primary" style="flex:1; padding:4px 8px; font-size:11px;" onclick="adjustGodownStock('godown-val-3', 'godown-bar-3', 25, 'Pure Silk Yarn')">
+                + 25 kg (Restock)
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 4: Zari Thread -->
+          <div class="loom-tile-simple" style="border-left:3px solid #f59e0b;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12px; font-weight:600; color:#f8fafc;">Gold Zari Thread</span>
+              <span class="badge badge-warning">42% In Stock</span>
+            </div>
+            <div style="font-size:11px; color:#64748b; margin-top:2px;">CODE: RM-004 &bull; RACK Z-1</div>
+            <div style="margin:10px 0 6px 0;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; color:#cbd5e1; margin-bottom:4px;">
+                <span>Available: <strong style="color:#fbbf24;" id="godown-val-4">85</strong> kg</span>
+                <span style="color:#64748b;">Min: 100 kg</span>
+              </div>
+              <div style="height:6px; background:#0b1320; border-radius:3px; overflow:hidden;">
+                <div style="height:100%; width:42%; background:#f59e0b; border-radius:3px;" id="godown-bar-4"></div>
+              </div>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:10px;">
+              <button class="btn-primary" style="flex:1; padding:4px 8px; font-size:11px;" onclick="adjustGodownStock('godown-val-4', 'godown-bar-4', 20, 'Gold Zari Thread')">
+                + 20 kg (Inflow)
+              </button>
+              <button class="btn-secondary" style="flex:1; padding:4px 8px; font-size:11px;" onclick="adjustGodownStock('godown-val-4', 'godown-bar-4', -10, 'Gold Zari Thread')">
+                - 10 kg (Issue)
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 5: Kanchi Silk Fabric Rolls -->
+          <div class="loom-tile-simple" style="border-left:3px solid #3b82f6;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12px; font-weight:600; color:#f8fafc;">Kanchi Silk Fabric</span>
+              <span class="badge badge-success">Ready Stock</span>
+            </div>
+            <div style="font-size:11px; color:#64748b; margin-top:2px;">CODE: RM-005 &bull; GODOWN 2</div>
+            <div style="margin:10px 0 6px 0;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; color:#cbd5e1; margin-bottom:4px;">
+                <span>Available: <strong style="color:#60a5fa;" id="godown-val-5">450</strong> meters</span>
+                <span style="color:#64748b;">Ready to dispatch</span>
+              </div>
+              <div style="height:6px; background:#0b1320; border-radius:3px; overflow:hidden;">
+                <div style="height:100%; width:75%; background:#3b82f6; border-radius:3px;" id="godown-bar-5"></div>
+              </div>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:10px;">
+              <button class="btn-primary" style="flex:1; padding:4px 8px; font-size:11px;" onclick="adjustGodownStock('godown-val-5', 'godown-bar-5', 50, 'Kanchi Silk Fabric')">
+                + 50 m (Inflow)
+              </button>
+              <button class="btn-secondary" style="flex:1; padding:4px 8px; font-size:11px;" onclick="adjustGodownStock('godown-val-5', 'godown-bar-5', -50, 'Kanchi Silk Fabric')">
+                - 50 m (Issue)
+              </button>
+            </div>
+          </div>
+
+          <!-- Item 6: Dye & Colors -->
+          <div class="loom-tile-simple" style="border-left:3px solid #a855f7;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12px; font-weight:600; color:#f8fafc;">Red &amp; Maroon Dye</span>
+              <span class="badge badge-warning">Low Buffer (25%)</span>
+            </div>
+            <div style="font-size:11px; color:#64748b; margin-top:2px;">CODE: RM-007 &bull; CHEMICAL DRUM 3</div>
+            <div style="margin:10px 0 6px 0;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; color:#cbd5e1; margin-bottom:4px;">
+                <span>Available: <strong style="color:#c084fc;" id="godown-val-6">25</strong> Liters</span>
+                <span style="color:#f59e0b;">Min: 50 L</span>
+              </div>
+              <div style="height:6px; background:#0b1320; border-radius:3px; overflow:hidden;">
+                <div style="height:100%; width:25%; background:#a855f7; border-radius:3px;" id="godown-bar-6"></div>
+              </div>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:10px;">
+              <button class="btn-primary" style="flex:1; padding:4px 8px; font-size:11px;" onclick="adjustGodownStock('godown-val-6', 'godown-bar-6', 25, 'Red & Maroon Dye')">
+                + 25 L (Inflow)
+              </button>
+              <button class="btn-secondary" style="flex:1; padding:4px 8px; font-size:11px;" onclick="adjustGodownStock('godown-val-6', 'godown-bar-6', -5, 'Red & Maroon Dye')">
+                - 5 L (Issue)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT AREA -->
+      <div class="content-area">
+
+        <!-- LEFT MAIN -->
+        <div class="left-main">
+
+          <!-- FILTERS -->
+          <div class="filter-row">
+            <div class="fgrp">
+              <label class="flabel">Category</label>
+              <div class="fwrap">
+                <select class="fsel" id="f-cat">
+                  <option>All Categories</option>
+                  <option>Yarn</option>
+                  <option>Fabric</option>
+                  <option>Chemicals</option>
+                  <option>Packaging</option>
+                </select>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11" class="farr"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              </div>
+            </div>
+            <div class="fgrp">
+              <label class="flabel">Item Type</label>
+              <div class="fwrap">
+                <select class="fsel" id="f-type">
+                  <option>All Types</option>
+                  <option>Raw Material</option>
+                  <option>Finished</option>
+                </select>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11" class="farr"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              </div>
+            </div>
+            <div class="fgrp">
+              <label class="flabel">Stock Status</label>
+              <div class="fwrap">
+                <select class="fsel" id="f-status">
+                  <option>All</option>
+                  <option>In Stock</option>
+                  <option>Low Stock</option>
+                  <option>Out of Stock</option>
+                </select>
+                <svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11" class="farr"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              </div>
+            </div>
+            <div class="fgrp fgrp-search">
+              <div class="fwrap">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13" style="color:#4a6a88;flex-shrink:0"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
+                <input type="text" class="finput" id="f-search" placeholder="Search by name, code, supplier..."/>
+              </div>
+            </div>
+            <button class="reset-btn" id="btn-reset">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
+              Reset
+            </button>
+          </div>
+
+          <!-- STOCK TABLE -->
+          <div class="table-card">
+            <div class="table-hd">
+              <div class="thd-left">
+                <span class="thd-icon amber-icon">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3z"/></svg>
+                </span>
+                STOCK ITEMS
+              </div>
+              <div class="thd-right">Showing 1-10 of 125 items</div>
+            </div>
+            <div class="tbl-wrap">
+              <table class="data-tbl" id="stock-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Category</th>
+                    <th>Unit</th>
+                    <th>Current Stock</th>
+                    <th>Min. Level</th>
+                    <th>Status</th>
+                    <th>Last Updated</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-cat="Yarn" data-status="In Stock">
+                    <td>1</td><td class="code-cell">RM-001</td><td class="name-cell">Cotton Yarn 20s</td><td>Yarn</td><td>kg</td><td class="stock-num">1,250</td><td>500</td>
+                    <td><span class="sbadge sb-in">In Stock</span></td><td>13-Aug-2026</td>
+                    <td class="act-cell"><button class="ab av" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button><button class="ab ae" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button><button class="ab ad" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button></td>
+                  </tr>
+                  <tr data-cat="Yarn" data-status="Low Stock">
+                    <td>2</td><td class="code-cell">RM-002</td><td class="name-cell">Cotton Yarn 40s</td><td>Yarn</td><td>kg</td><td class="stock-num stock-low">320</td><td>500</td>
+                    <td><span class="sbadge sb-low">Low Stock</span></td><td>12-Aug-2026</td>
+                    <td class="act-cell"><button class="ab av" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button><button class="ab ae" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button><button class="ab ad" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button></td>
+                  </tr>
+                  <tr data-cat="Yarn" data-status="Out of Stock">
+                    <td>3</td><td class="code-cell">RM-003</td><td class="name-cell">Silk Yarn</td><td>Yarn</td><td>kg</td><td class="stock-num stock-out">0</td><td>100</td>
+                    <td><span class="sbadge sb-out">Out of Stock</span></td><td>10-Aug-2026</td>
+                    <td class="act-cell"><button class="ab av" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button><button class="ab ae" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button><button class="ab ad" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button></td>
+                  </tr>
+                  <tr data-cat="Yarn" data-status="Low Stock">
+                    <td>4</td><td class="code-cell">RM-004</td><td class="name-cell">Zari Thread</td><td>Yarn</td><td>kg</td><td class="stock-num stock-low">85</td><td>100</td>
+                    <td><span class="sbadge sb-low">Low Stock</span></td><td>13-Aug-2026</td>
+                    <td class="act-cell"><button class="ab av" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button><button class="ab ae" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button><button class="ab ad" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button></td>
+                  </tr>
+                  <tr data-cat="Fabric" data-status="In Stock">
+                    <td>5</td><td class="code-cell">RM-005</td><td class="name-cell">Kanchi Silk Fabric</td><td>Fabric</td><td>meter</td><td class="stock-num">450</td><td>200</td>
+                    <td><span class="sbadge sb-in">In Stock</span></td><td>11-Aug-2026</td>
+                    <td class="act-cell"><button class="ab av" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button><button class="ab ae" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button><button class="ab ad" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button></td>
+                  </tr>
+                  <tr data-cat="Fabric" data-status="In Stock">
+                    <td>6</td><td class="code-cell">RM-006</td><td class="name-cell">Cotton Fabric</td><td>Fabric</td><td>meter</td><td class="stock-num">210</td><td>100</td>
+                    <td><span class="sbadge sb-in">In Stock</span></td><td>11-Aug-2026</td>
+                    <td class="act-cell"><button class="ab av" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button><button class="ab ae" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button><button class="ab ad" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button></td>
+                  </tr>
+                  <tr data-cat="Chemicals" data-status="Low Stock">
+                    <td>7</td><td class="code-cell">RM-007</td><td class="name-cell">Dye - Red</td><td>Chemicals</td><td>liter</td><td class="stock-num stock-low">25</td><td>50</td>
+                    <td><span class="sbadge sb-low">Low Stock</span></td><td>12-Aug-2026</td>
+                    <td class="act-cell"><button class="ab av" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button><button class="ab ae" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button><button class="ab ad" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button></td>
+                  </tr>
+                  <tr data-cat="Chemicals" data-status="Out of Stock">
+                    <td>8</td><td class="code-cell">RM-008</td><td class="name-cell">Dye - Blue</td><td>Chemicals</td><td>liter</td><td class="stock-num stock-out">0</td><td>50</td>
+                    <td><span class="sbadge sb-out">Out of Stock</span></td><td>11-Aug-2026</td>
+                    <td class="act-cell"><button class="ab av" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button><button class="ab ae" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button><button class="ab ad" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button></td>
+                  </tr>
+                  <tr data-cat="Packaging" data-status="In Stock">
+                    <td>9</td><td class="code-cell">RM-009</td><td class="name-cell">Packing Rolls</td><td>Packaging</td><td>roll</td><td class="stock-num">75</td><td>50</td>
+                    <td><span class="sbadge sb-in">In Stock</span></td><td>10-Aug-2026</td>
+                    <td class="act-cell"><button class="ab av" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button><button class="ab ae" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button><button class="ab ad" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button></td>
+                  </tr>
+                  <tr data-cat="Packaging" data-status="In Stock">
+                    <td>10</td><td class="code-cell">RM-010</td><td class="name-cell">Carton Box</td><td>Packaging</td><td>piece</td><td class="stock-num">300</td><td>100</td>
+                    <td><span class="sbadge sb-in">In Stock</span></td><td>10-Aug-2026</td>
+                    <td class="act-cell"><button class="ab av" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button><button class="ab ae" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button><button class="ab ad" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- BOTTOM: Recent Entries + Movement Chart -->
+          <div class="bot-row">
+            <!-- Recent Stock Entries -->
+            <div class="bot-panel">
+              <div class="bpanel-hd">
+                <span class="bphd-icon amber-icon"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg></span>
+                RECENT STOCK ENTRIES
+              </div>
+              <table class="ptab">
+                <thead><tr><th>Date</th><th>Item Name</th><th>Type</th><th>Quantity</th><th>Remarks</th><th>Added By</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td>13-Aug-2026</td><td>Cotton Yarn 20s</td>
+                    <td><span class="type-badge type-in">Inward</span></td>
+                    <td class="qty-in">+500 kg</td><td>Purchase</td><td>Ramesh</td>
+                  </tr>
+                  <tr>
+                    <td>12-Aug-2026</td><td>Dye - Red</td>
+                    <td><span class="type-badge type-in">Inward</span></td>
+                    <td class="qty-in">+25 liter</td><td>Purchase</td><td>Suresh</td>
+                  </tr>
+                  <tr>
+                    <td>11-Aug-2026</td><td>Kanchi Silk Fabric</td>
+                    <td><span class="type-badge type-in">Inward</span></td>
+                    <td class="qty-in">+200 m</td><td>Purchase</td><td>Anil</td>
+                  </tr>
+                  <tr>
+                    <td>10-Aug-2026</td><td>Silk Yarn</td>
+                    <td><span class="type-badge type-out">Outward</span></td>
+                    <td class="qty-out">-50 kg</td><td>Production</td><td>Mahesh</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Stock Movement Chart -->
+            <div class="bot-panel chart-panel">
+              <div class="bpanel-hd">
+                <span class="bphd-icon amber-icon"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg></span>
+                STOCK MOVEMENT <span class="hd-sub">(Last 7 Days)</span>
+                <div class="chart-legend">
+                  <span class="leg-dot" style="background:#22c55e"></span><span class="leg-txt">Inward</span>
+                  <span class="leg-dot" style="background:#f97316"></span><span class="leg-txt">Outward</span>
+                </div>
+              </div>
+              <div class="chart-area">
+                <canvas id="movementChart" width="340" height="110"></canvas>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /left-main -->
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+
+          <!-- Stock Value -->
+          <div class="rp-card">
+            <div class="rp-hd">
+              <span class="rphd-icon amber-icon"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/></svg></span>
+              STOCK VALUE
+            </div>
+            <div class="sv-amount">₹4,85,260</div>
+            <div class="sv-sub">Total Inventory Value</div>
+          </div>
+
+          <!-- Category Wise Chart -->
+          <div class="rp-card">
+            <div class="rp-hd">
+              <span class="rphd-icon amber-icon"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/></svg></span>
+              CATEGORY WISE STOCK VALUE
+            </div>
+            <div class="donut-wrap">
+              <svg viewBox="0 0 100 100" width="90" height="90" class="donut-svg">
+                <!-- Background circle -->
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#1a2535" stroke-width="14"/>
+                <!-- Yarn 42% -->
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#3b82f6" stroke-width="14"
+                  stroke-dasharray="100.22 138.74" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+                <!-- Fabric 28% -->
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#22c55e" stroke-width="14"
+                  stroke-dasharray="66.82 172.14" stroke-dashoffset="-100.22" transform="rotate(-90 50 50)"/>
+                <!-- Chemicals 12% -->
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#facc15" stroke-width="14"
+                  stroke-dasharray="28.64 210.32" stroke-dashoffset="-167.04" transform="rotate(-90 50 50)"/>
+                <!-- Packaging 10% -->
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#a855f7" stroke-width="14"
+                  stroke-dasharray="23.88 215.08" stroke-dashoffset="-195.68" transform="rotate(-90 50 50)"/>
+                <!-- Others 8% -->
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#64748b" stroke-width="14"
+                  stroke-dasharray="19.1 219.86" stroke-dashoffset="-219.56" transform="rotate(-90 50 50)"/>
+                <text x="50" y="48" text-anchor="middle" fill="#dde6f0" font-size="7" font-family="Inter,sans-serif" font-weight="700">TOTAL</text>
+                <text x="50" y="57" text-anchor="middle" fill="#f0a500" font-size="8" font-family="Inter,sans-serif" font-weight="900">125</text>
+              </svg>
+              <div class="donut-legend">
+                <div class="dl-row"><span class="dl-dot" style="background:#3b82f6"></span><span class="dl-label">Yarn</span><span class="dl-pct">42%</span></div>
+                <div class="dl-row"><span class="dl-dot" style="background:#22c55e"></span><span class="dl-label">Fabric</span><span class="dl-pct">28%</span></div>
+                <div class="dl-row"><span class="dl-dot" style="background:#facc15"></span><span class="dl-label">Chemicals</span><span class="dl-pct">12%</span></div>
+                <div class="dl-row"><span class="dl-dot" style="background:#a855f7"></span><span class="dl-label">Packaging</span><span class="dl-pct">10%</span></div>
+                <div class="dl-row"><span class="dl-dot" style="background:#64748b"></span><span class="dl-label">Others</span><span class="dl-pct">8%</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Low Stock Alerts -->
+          <div class="rp-card">
+            <div class="rp-hd">
+              <span class="rphd-icon warn-icon"><svg viewBox="0 0 20 20" fill="currentColor" width="11" height="11"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></span>
+              LOW STOCK ALERTS
+              <a href="#" class="view-all">View All →</a>
+            </div>
+            <div class="alert-list">
+              <div class="alert-row">
+                <div class="ar-left">
+                  <span class="ar-dot" style="background:#f59e0b"></span>
+                  <span class="ar-name">Cotton Yarn 40s</span>
+                </div>
+                <div class="ar-right">
+                  <span class="ar-stock">320</span>
+                  <span class="ar-slash">/</span>
+                  <span class="ar-min">500</span>
+                </div>
+              </div>
+              <div class="alert-row">
+                <div class="ar-left">
+                  <span class="ar-dot" style="background:#f59e0b"></span>
+                  <span class="ar-name">Zari Thread</span>
+                </div>
+                <div class="ar-right">
+                  <span class="ar-stock">85</span><span class="ar-slash">/</span><span class="ar-min">100</span>
+                </div>
+              </div>
+              <div class="alert-row">
+                <div class="ar-left">
+                  <span class="ar-dot" style="background:#ef4444"></span>
+                  <span class="ar-name">Dye - Red</span>
+                </div>
+                <div class="ar-right">
+                  <span class="ar-stock">25</span><span class="ar-slash">/</span><span class="ar-min">50</span>
+                </div>
+              </div>
+              <div class="alert-row">
+                <div class="ar-left">
+                  <span class="ar-dot" style="background:#ef4444"></span>
+                  <span class="ar-name">Dye - Blue</span>
+                </div>
+                <div class="ar-right">
+                  <span class="ar-stock ar-zero">0</span><span class="ar-slash">/</span><span class="ar-min">50</span>
+                </div>
+              </div>
+              <div class="alert-row">
+                <div class="ar-left">
+                  <span class="ar-dot" style="background:#ef4444"></span>
+                  <span class="ar-name">Silk Yarn</span>
+                </div>
+                <div class="ar-right">
+                  <span class="ar-stock ar-zero">0</span><span class="ar-slash">/</span><span class="ar-min">100</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /right-panel -->
+      </div><!-- /content-area -->
+    </main>
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+      <span class="sb-left">UDAYARAVI WEAVE MASTER &nbsp;|&nbsp; Stock Management System</span>
+      <span class="sb-right">Build Better Weaves &nbsp;|&nbsp; <span id="sb-datetime">13-Aug-2026 04:25 PM</span></span>
+    </div>
+  </div>
+</div>
+<script src="i18n.js"></script>
+<script src="stock.js"></script>
+<script>
+function adjustGodownStock(valId, barId, delta, itemName) {
+  const el = document.getElementById(valId);
+  const bar = document.getElementById(barId);
+  if (!el) return;
+  let cur = parseInt(el.textContent.replace(/,/g, ''), 10) || 0;
+  cur = Math.max(0, cur + delta);
+  el.textContent = cur.toLocaleString();
+  
+  if (bar) {
+    let pct = Math.min(100, Math.round((cur / 1000) * 100));
+    bar.style.width = pct + '%';
+  }
+  
+  if (delta > 0) {
+    showSimpleToast(`🟢 Received +${delta} for ${itemName}`);
+  } else {
+    showSimpleToast(`🟡 Issued ${Math.abs(delta)} of ${itemName}`);
+  }
+}
+
+function quickAddStockItem() {
+  const name = prompt("Enter Item Name:", "Cotton Yarn 60s");
+  if (!name) return;
+  const qty = prompt("Initial Quantity (kg):", "200");
+  if (!qty) return;
+  
+  const totalEl = document.getElementById('stat-total-items');
+  if (totalEl) {
+    totalEl.textContent = parseInt(totalEl.textContent, 10) + 1;
+  }
+  showSimpleToast(`✅ Added ${name} (${qty} kg) to Godown!`);
+}
+</script>
+</body>
+</html>

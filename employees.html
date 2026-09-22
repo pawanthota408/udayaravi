@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employees — Udayaravi Weave Master</title>
+  <meta name="description" content="Manage your team, roles, attendance, performance and more."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="employees.css"/>
+  <link rel="stylesheet" href="corporate-theme.css"/>
+</head>
+<body>
+<div class="app-root">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="logo-block">
+      <img src="../../brain/a507fab7-2db5-406b-a76b-05c571fb76ea/.user_uploaded/media_1790079156110.png" alt="Udayaravi Creations" class="brand-logo-img" onerror="if(this.src.indexOf('logo.png')===-1)this.src='logo.png';" />
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="index.html" id="nav-dashboard">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+        <span data-i18n="nav_dashboard">Dashboard</span>
+      </a>
+      <a class="nav-item" href="production.html" id="nav-production">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+        <span data-i18n="nav_production">Production</span>
+      </a>
+      <a class="nav-item" href="stock.html" id="nav-stock">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_stock">Stock</span>
+      </a>
+      <a class="nav-item" href="salespay.html" id="nav-salespay">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+        <span data-i18n="nav_salespay">Sales &amp; Payments</span>
+      </a>
+      <a class="nav-item" href="reports.html" id="nav-reports">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_reports">Reports</span>
+      </a>
+      <a class="nav-item" href="customers.html" id="nav-customers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+        <span data-i18n="nav_customers">Customers</span>
+      </a>
+      <a class="nav-item active" href="employees.html" id="nav-employees">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_employees">Employees</span>
+      </a>
+      <a class="nav-item" href="suppliers.html" id="nav-suppliers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/></svg>
+        <span data-i18n="nav_suppliers">Suppliers</span>
+      </a>
+      <a class="nav-item" href="settings.html" id="nav-settings">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_settings">Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="wm-label">WEAVE MASTER</div>
+      <div class="toggle-row">
+        <label class="tog">
+          <input type="checkbox" checked id="master-tog"/>
+          <span class="tog-track"></span>
+        </label>
+        <span class="tog-txt" id="tog-txt">ON</span>
+      </div>
+      <div class="tagline">Weaving Progress<br/>A Stronger Tomorrow</div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN WRAPPER ================= -->
+  <div class="main-wrapper">
+    <main class="main" style="padding:18px 24px; display:flex; flex-direction:column; gap:16px;">
+
+      <!-- PAGE HEADER -->
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; border-bottom:1px solid #1e293b; padding-bottom:14px;">
+        <div>
+          <h1 style="font-size:18px; font-weight:700; color:#f59e0b; margin-bottom:3px; letter-spacing:-0.01em;">Human Resources &amp; Staff Attendance</h1>
+          <p style="font-size:12px; color:#94a3b8;">Workforce deployment, shift attendance, operator assignments, and payroll advances.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <!-- Quiet Status -->
+          <div class="factory-beacon">
+            <span class="beacon-pulse"></span>
+            <span>38 Staff on Duty</span>
+          </div>
+
+          <!-- Multi-language Switcher -->
+          <div class="lang-switcher" id="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setAppLanguage('en')">EN</button>
+            <button class="lang-btn" data-lang="hi" onclick="setAppLanguage('hi')">हिन्दी</button>
+            <button class="lang-btn" data-lang="kn" onclick="setAppLanguage('kn')">ಕನ್ನಡ</button>
+          </div>
+
+          <button class="btn-primary" id="btn-add-worker-top" style="padding:6px 14px;" onclick="quickAddWorker()">
+            + Add Employee
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 CLEAN EXECUTIVE KPI CARDS -->
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;">
+        <!-- Total Staff -->
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Total Workforce</span>
+            <span class="badge badge-info">Plant Roster</span>
+          </div>
+          <div class="kpi-val" id="stat-emp-total">42 <span style="font-size:14px; color:#64748b; font-weight:400;">staff</span></div>
+          <div class="kpi-sub">Master Weavers, Helpers &amp; Technicians</div>
+        </div>
+
+        <!-- Present Today -->
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Present on Duty</span>
+            <span class="badge badge-success">90.5% Shift</span>
+          </div>
+          <div class="kpi-val" id="stat-emp-present">38</div>
+          <div class="kpi-sub">Active across Shift A looms</div>
+        </div>
+
+        <!-- Absent / On Leave -->
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Absent / Leave</span>
+            <span class="badge badge-danger">4 Staff</span>
+          </div>
+          <div class="kpi-val" id="stat-emp-absent">4</div>
+          <div class="kpi-sub">2 approved &bull; 2 standby replaced</div>
+        </div>
+
+        <!-- Attendance Rate -->
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Attendance Rate</span>
+            <span class="badge badge-success">+2.1% MoM</span>
+          </div>
+          <div class="kpi-val">90.5%</div>
+          <div class="kpi-sub">Average shift staffing efficiency</div>
+        </div>
+      </div>
+
+      <!-- SHIFT ATTENDANCE TERMINAL -->
+      <div class="corporate-card" style="margin-bottom:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e293b;">
+          <div>
+            <h2 style="font-size:15px;font-weight:600;color:#f8fafc;margin:0;">
+              Active Shift Workforce &amp; Daily Log
+            </h2>
+            <span style="font-size:12px;color:#94a3b8;">Record duty status, meter output bonuses, and cash wage advances</span>
+          </div>
+          <button class="btn-secondary" onclick="quickAddWorker()" style="padding:6px 14px;font-size:12px;">+ Add Workforce</button>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(290px, 1fr));gap:14px;" id="worker-att-grid">
+          <!-- Worker 1: Ramesh S -->
+          <div class="loom-tile-simple" id="worker-card-1" style="border-left:4px solid #22c55e;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:44px;height:44px;border-radius:50%;background:#14532d;color:#86efac;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;">
+                RS
+              </div>
+              <div style="flex:1;">
+                <div style="font-size:15px;font-weight:700;color:#f8fafc;">Ramesh S (रमेश - मास्टर)</div>
+                <div style="font-size:12px;color:#94a3b8;">📍 Loom L-01 | Kanchi Silk Saree</div>
+              </div>
+              <span class="sbadge sb-in" id="att-badge-1" style="font-size:11px;">🟢 PRESENT</span>
+            </div>
+            <div style="margin:10px 0 8px 0;font-size:12px;color:#cbd5e1;display:flex;justify-content:space-between;">
+              <span>Today Meters: <b>24.5 m</b></span>
+              <span style="color:#86efac;">Wage: ₹650 / day</span>
+            </div>
+            <div style="display:flex;gap:6px;">
+              <button class="btn-big-action" id="att-btn-1" style="flex:2;background:#15803d;padding:8px;font-size:12px;" onclick="toggleWorkerAttendance(1, 'Ramesh S')">
+                🟢 MARK ABSENT (गैरहाजिर करें)
+              </button>
+              <button class="btn-big-action" style="flex:1;background:#334155;padding:8px;font-size:12px;" onclick="showSimpleToast('💵 Gave ₹500 Daily Advance to Ramesh S (दर्ज हो गया)')">
+                💵 ₹500 Advance
+              </button>
+            </div>
+          </div>
+
+          <!-- Worker 2: Murugan A -->
+          <div class="loom-tile-simple" id="worker-card-2" style="border-left:4px solid #22c55e;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:44px;height:44px;border-radius:50%;background:#14532d;color:#86efac;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;">
+                MA
+              </div>
+              <div style="flex:1;">
+                <div style="font-size:15px;font-weight:700;color:#f8fafc;">Murugan A (मुरुगन)</div>
+                <div style="font-size:12px;color:#94a3b8;">📍 Loom L-02 | Pure Silk Border</div>
+              </div>
+              <span class="sbadge sb-in" id="att-badge-2" style="font-size:11px;">🟢 PRESENT</span>
+            </div>
+            <div style="margin:10px 0 8px 0;font-size:12px;color:#cbd5e1;display:flex;justify-content:space-between;">
+              <span>Today Meters: <b>22.0 m</b></span>
+              <span style="color:#86efac;">Wage: ₹650 / day</span>
+            </div>
+            <div style="display:flex;gap:6px;">
+              <button class="btn-big-action" id="att-btn-2" style="flex:2;background:#15803d;padding:8px;font-size:12px;" onclick="toggleWorkerAttendance(2, 'Murugan A')">
+                🟢 MARK ABSENT (गैरहाजिर करें)
+              </button>
+              <button class="btn-big-action" style="flex:1;background:#334155;padding:8px;font-size:12px;" onclick="showSimpleToast('💵 Gave ₹500 Daily Advance to Murugan A')">
+                💵 ₹500 Advance
+              </button>
+            </div>
+          </div>
+
+          <!-- Worker 3: Suresh K (Absent) -->
+          <div class="loom-tile-simple" id="worker-card-3" style="border-left:4px solid #ef4444;background:#180f12;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:44px;height:44px;border-radius:50%;background:#7f1d1d;color:#fca5a5;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;">
+                SK
+              </div>
+              <div style="flex:1;">
+                <div style="font-size:15px;font-weight:700;color:#f8fafc;">Suresh K (सुरेश - छुट्टी)</div>
+                <div style="font-size:12px;color:#f87171;">📍 Loom L-05 | Medical Leave</div>
+              </div>
+              <span class="sbadge sb-out" id="att-badge-3" style="font-size:11px;">🔴 ABSENT</span>
+            </div>
+            <div style="margin:10px 0 8px 0;font-size:12px;color:#cbd5e1;display:flex;justify-content:space-between;">
+              <span>Loom Status: <b style="color:#f87171;">Idle</b></span>
+              <span style="color:#fca5a5;">Sick Leave (1 day)</span>
+            </div>
+            <div style="display:flex;gap:6px;">
+              <button class="btn-big-action" id="att-btn-3" style="flex:2;background:#1e3a8a;padding:8px;font-size:12px;" onclick="toggleWorkerAttendance(3, 'Suresh K')">
+                🔴 MARK PRESENT (हाजिर करें)
+              </button>
+              <button class="btn-big-action" style="flex:1;background:#334155;padding:8px;font-size:12px;" onclick="showSimpleToast('📞 Calling Suresh K: +91 94431 88990')">
+                📞 Call
+              </button>
+            </div>
+          </div>
+
+          <!-- Worker 4: Selvi L (Zari & Inspection) -->
+          <div class="loom-tile-simple" id="worker-card-4" style="border-left:4px solid #22c55e;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:44px;height:44px;border-radius:50%;background:#14532d;color:#86efac;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16px;">
+                SL
+              </div>
+              <div style="flex:1;">
+                <div style="font-size:15px;font-weight:700;color:#f8fafc;">Selvi L (सेलवी - क्वालिटी)</div>
+                <div style="font-size:12px;color:#94a3b8;">📍 Quality Checking &amp; Zari Finishing</div>
+              </div>
+              <span class="sbadge sb-in" id="att-badge-4" style="font-size:11px;">🟢 PRESENT</span>
+            </div>
+            <div style="margin:10px 0 8px 0;font-size:12px;color:#cbd5e1;display:flex;justify-content:space-between;">
+              <span>Checked: <b>18 Sarees</b></span>
+              <span style="color:#86efac;">Wage: ₹600 / day</span>
+            </div>
+            <div style="display:flex;gap:6px;">
+              <button class="btn-big-action" id="att-btn-4" style="flex:2;background:#15803d;padding:8px;font-size:12px;" onclick="toggleWorkerAttendance(4, 'Selvi L')">
+                🟢 MARK ABSENT (गैरहाजिर करें)
+              </button>
+              <button class="btn-big-action" style="flex:1;background:#334155;padding:8px;font-size:12px;" onclick="showSimpleToast('💵 Gave ₹500 Daily Advance to Selvi L')">
+                💵 ₹500 Advance
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-TABS ROW + ADD EMPLOYEE BTN -->
+      <div class="subtabs-row">
+        <div class="subtabs-group">
+          <button class="subtab-btn active">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+            All Employees
+          </button>
+          <button class="subtab-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4zm3 1h2v2H7V5zm4 0h2v2h-2V5zm-4 4h2v2H7V9zm4 0h2v2h-2V9zm-4 4h2v2H7v-2zm4 0h2v2h-2v-2z" clip-rule="evenodd"/></svg>
+            Departments
+          </button>
+          <button class="subtab-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M10 2a1 1 0 00-1 1v1a1 1 0 002 0V3a1 1 0 00-1-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+            Roles &amp; Permissions
+          </button>
+          <button class="subtab-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+            Attendance
+          </button>
+          <button class="subtab-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd"/></svg>
+            Leave Requests
+          </button>
+          <button class="subtab-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+            Performance
+          </button>
+          <button class="subtab-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/></svg>
+            Payroll
+          </button>
+        </div>
+        <button class="btn-add-emp" id="btn-add-emp">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/></svg>
+          + Add Employee
+        </button>
+      </div>
+
+      <!-- FILTER BAR -->
+      <div class="filter-bar">
+        <div class="filter-group">
+          <span class="f-lbl">Department</span>
+          <select class="f-sel" id="f-dept">
+            <option value="All Departments">All Departments</option>
+            <option value="Management">Management</option>
+            <option value="Sales">Sales</option>
+            <option value="Accounts">Accounts</option>
+            <option value="Production">Production</option>
+            <option value="IT">IT</option>
+            <option value="HR">HR</option>
+            <option value="Warehouse">Warehouse</option>
+            <option value="Design">Design</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <span class="f-lbl">Role</span>
+          <select class="f-sel" id="f-role">
+            <option value="All Roles">All Roles</option>
+            <option value="Admin">Admin</option>
+            <option value="Sales Executive">Sales Executive</option>
+            <option value="Accountant">Accountant</option>
+            <option value="Supervisor">Supervisor</option>
+            <option value="Operator">Operator</option>
+            <option value="Developer">Developer</option>
+            <option value="HR Executive">HR Executive</option>
+            <option value="Store Keeper">Store Keeper</option>
+            <option value="Designer">Designer</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <span class="f-lbl">Status</span>
+          <select class="f-sel" id="f-status">
+            <option value="All Status">All Status</option>
+            <option value="Active">Active</option>
+            <option value="On Leave">On Leave</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+
+        <div class="f-search-box">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
+          <input type="text" id="f-search-emp" placeholder="Search by name, email, phone or ID..."/>
+        </div>
+
+        <button class="btn-f-search" id="btn-search">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
+          Search
+        </button>
+
+        <button class="btn-f-reset" id="btn-reset">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
+          Reset
+        </button>
+      </div>
+
+      <!-- CONTENT GRID: TABLE (LEFT) + PANELS (RIGHT) -->
+      <div class="content-grid">
+
+        <!-- LEFT COLUMN: TABLE + BOTTOM MANAGEMENT TILES -->
+        <div class="left-col">
+
+          <!-- TABLE CARD -->
+          <div class="table-card">
+            <div class="tc-header">
+              <div class="tc-title">
+                <svg viewBox="0 0 20 20" fill="#f0a500" width="14" height="14"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+                EMPLOYEE LIST
+              </div>
+              <span class="tc-count">Showing 1 - 10 of 42 employees</span>
+            </div>
+
+            <div class="table-scroll">
+              <table class="table-emp" id="table-employees">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Employee ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Role</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th>Join Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1: Pavan Kumar -->
+                  <tr data-dept="Management" data-role="Admin" data-status="Active">
+                    <td>1</td>
+                    <td class="emp-id-cell">EMP-001</td>
+                    <td>
+                      <div class="emp-name-cell">
+                        <div class="emp-av av-blue">PK</div>
+                        <span>Pavan Kumar</span>
+                      </div>
+                    </td>
+                    <td>Management</td>
+                    <td>Admin</td>
+                    <td>pavan@udayaravi.com</td>
+                    <td>9876543210</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td class="join-date">01-Jan-2024</td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2: Sridhar Reddy -->
+                  <tr data-dept="Sales" data-role="Sales Executive" data-status="Active">
+                    <td>2</td>
+                    <td class="emp-id-cell">EMP-002</td>
+                    <td>
+                      <div class="emp-name-cell">
+                        <div class="emp-av av-cyan">SR</div>
+                        <span>Sridhar Reddy</span>
+                      </div>
+                    </td>
+                    <td>Sales</td>
+                    <td>Sales Executive</td>
+                    <td>sridhar@udayaravi.com</td>
+                    <td>9123456789</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td class="join-date">15-Mar-2024</td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3: Anitha R -->
+                  <tr data-dept="Accounts" data-role="Accountant" data-status="Active">
+                    <td>3</td>
+                    <td class="emp-id-cell">EMP-003</td>
+                    <td>
+                      <div class="emp-name-cell">
+                        <div class="emp-av av-sky">AR</div>
+                        <span>Anitha R</span>
+                      </div>
+                    </td>
+                    <td>Accounts</td>
+                    <td>Accountant</td>
+                    <td>anitha@udayaravi.com</td>
+                    <td>9988776655</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td class="join-date">10-Feb-2024</td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4: Ramesh K -->
+                  <tr data-dept="Production" data-role="Supervisor" data-status="On Leave">
+                    <td>4</td>
+                    <td class="emp-id-cell">EMP-004</td>
+                    <td>
+                      <div class="emp-name-cell">
+                        <div class="emp-av av-amber">RK</div>
+                        <span>Ramesh K</span>
+                      </div>
+                    </td>
+                    <td>Production</td>
+                    <td>Supervisor</td>
+                    <td>ramesh@udayaravi.com</td>
+                    <td>9845678901</td>
+                    <td><span class="st-badge st-leave">On Leave</span></td>
+                    <td class="join-date">12-Apr-2024</td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 5: Divya S -->
+                  <tr data-dept="Production" data-role="Operator" data-status="Active">
+                    <td>5</td>
+                    <td class="emp-id-cell">EMP-005</td>
+                    <td>
+                      <div class="emp-name-cell">
+                        <div class="emp-av av-blue">DS</div>
+                        <span>Divya S</span>
+                      </div>
+                    </td>
+                    <td>Production</td>
+                    <td>Operator</td>
+                    <td>divya@udayaravi.com</td>
+                    <td>9876123456</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td class="join-date">18-May-2024</td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 6: Karthik V -->
+                  <tr data-dept="IT" data-role="Developer" data-status="Active">
+                    <td>6</td>
+                    <td class="emp-id-cell">EMP-006</td>
+                    <td>
+                      <div class="emp-name-cell">
+                        <div class="emp-av av-purple">KV</div>
+                        <span>Karthik V</span>
+                      </div>
+                    </td>
+                    <td>IT</td>
+                    <td>Developer</td>
+                    <td>karthik@udayaravi.com</td>
+                    <td>7894561230</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td class="join-date">01-Jul-2024</td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 7: Meena P -->
+                  <tr data-dept="HR" data-role="HR Executive" data-status="Active">
+                    <td>7</td>
+                    <td class="emp-id-cell">EMP-007</td>
+                    <td>
+                      <div class="emp-name-cell">
+                        <div class="emp-av av-blue">MP</div>
+                        <span>Meena P</span>
+                      </div>
+                    </td>
+                    <td>HR</td>
+                    <td>HR Executive</td>
+                    <td>meena@udayaravi.com</td>
+                    <td>9988001122</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td class="join-date">05-Jun-2024</td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 8: Lokesh T -->
+                  <tr data-dept="Warehouse" data-role="Store Keeper" data-status="Inactive">
+                    <td>8</td>
+                    <td class="emp-id-cell">EMP-008</td>
+                    <td>
+                      <div class="emp-name-cell">
+                        <div class="emp-av av-sky">LT</div>
+                        <span>Lokesh T</span>
+                      </div>
+                    </td>
+                    <td>Warehouse</td>
+                    <td>Store Keeper</td>
+                    <td>lokesh@udayaravi.com</td>
+                    <td>9012345678</td>
+                    <td><span class="st-badge st-inactive">Inactive</span></td>
+                    <td class="join-date">20-Feb-2024</td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 9: Sandeep M -->
+                  <tr data-dept="Sales" data-role="Sales Executive" data-status="Active">
+                    <td>9</td>
+                    <td class="emp-id-cell">EMP-009</td>
+                    <td>
+                      <div class="emp-name-cell">
+                        <div class="emp-av av-blue">SM</div>
+                        <span>Sandeep M</span>
+                      </div>
+                    </td>
+                    <td>Sales</td>
+                    <td>Sales Executive</td>
+                    <td>sandeep@udayaravi.com</td>
+                    <td>8899776655</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td class="join-date">15-Jul-2024</td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 10: Harika D -->
+                  <tr data-dept="Design" data-role="Designer" data-status="Active">
+                    <td>10</td>
+                    <td class="emp-id-cell">EMP-010</td>
+                    <td>
+                      <div class="emp-name-cell">
+                        <div class="emp-av av-cyan">HD</div>
+                        <span>Harika D</span>
+                      </div>
+                    </td>
+                    <td>Design</td>
+                    <td>Designer</td>
+                    <td>harika@udayaravi.com</td>
+                    <td>9988123456</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td class="join-date">01-Aug-2024</td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- BOTTOM 4 TILES -->
+          <div class="bottom-tiles">
+            <div class="tile tile-blue">
+              <div class="tile-ic">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/></svg>
+              </div>
+              <div class="tile-info">
+                <span class="tile-title">Add Employee</span>
+                <span class="tile-desc">Create new employee profile</span>
+              </div>
+            </div>
+
+            <div class="tile tile-green">
+              <div class="tile-ic">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4zm3 1h2v2H7V5zm4 0h2v2h-2V5zm-4 4h2v2H7V9zm4 0h2v2h-2V9zm-4 4h2v2H7v-2zm4 0h2v2h-2v-2z" clip-rule="evenodd"/></svg>
+              </div>
+              <div class="tile-info">
+                <span class="tile-title">Manage Departments</span>
+                <span class="tile-desc">Organize your team</span>
+              </div>
+            </div>
+
+            <div class="tile tile-orange">
+              <div class="tile-ic">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+              </div>
+              <div class="tile-info">
+                <span class="tile-title">Leave Requests</span>
+                <span class="tile-desc">Approve or reject leaves</span>
+              </div>
+            </div>
+
+            <div class="tile tile-purple">
+              <div class="tile-ic">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/></svg>
+              </div>
+              <div class="tile-info">
+                <span class="tile-title">Payroll</span>
+                <span class="tile-desc">Process salaries</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: 3 INFORMATION PANELS -->
+        <div class="right-col">
+
+          <!-- PANEL 1: DEPARTMENT WISE EMPLOYEES -->
+          <div class="rc-panel">
+            <div class="rc-header">
+              <div class="rc-title">
+                <svg viewBox="0 0 20 20" fill="#f0a500" width="12" height="12"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg>
+                DEPARTMENT WISE EMPLOYEES
+              </div>
+            </div>
+
+            <div class="dept-chart-body">
+              <!-- SVG DONUT CHART -->
+              <div class="donut-wrap">
+                <svg viewBox="0 0 100 100" class="donut-svg">
+                  <!-- C = 2 * PI * 34 ≈ 213.6 -->
+                  <!-- 1. Production (29% = 61.94, offset 0) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#0284c7" stroke-width="14" stroke-dasharray="61.94 151.66" stroke-dashoffset="0"/>
+                  <!-- 2. Sales (19% = 40.58, offset -61.94) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#22c55e" stroke-width="14" stroke-dasharray="40.58 173.02" stroke-dashoffset="-61.94"/>
+                  <!-- 3. Accounts (14% = 29.90, offset -102.52) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#eab308" stroke-width="14" stroke-dasharray="29.90 183.7" stroke-dashoffset="-102.52"/>
+                  <!-- 4. IT (12% = 25.63, offset -132.42) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#a855f7" stroke-width="14" stroke-dasharray="25.63 187.97" stroke-dashoffset="-132.42"/>
+                  <!-- 5. HR (10% = 21.36, offset -158.05) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#ef4444" stroke-width="14" stroke-dasharray="21.36 192.24" stroke-dashoffset="-158.05"/>
+                  <!-- 6. Management (10% = 21.36, offset -179.41) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#06b6d4" stroke-width="14" stroke-dasharray="21.36 192.24" stroke-dashoffset="-179.41"/>
+                  <!-- 7. Others (7% = 14.95, offset -200.77) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#64748b" stroke-width="14" stroke-dasharray="14.95 198.65" stroke-dashoffset="-200.77"/>
+                </svg>
+                <div class="donut-center">
+                  <span class="dc-num">42</span>
+                  <span class="dc-sub">Employees</span>
+                </div>
+              </div>
+
+              <!-- LEGEND -->
+              <div class="dept-legend">
+                <div class="dl-item">
+                  <div class="dl-label-wrap">
+                    <span class="dl-dot" style="background:#0284c7;"></span>
+                    <span>Production</span>
+                  </div>
+                  <span class="dl-val">12 (29%)</span>
+                </div>
+                <div class="dl-item">
+                  <div class="dl-label-wrap">
+                    <span class="dl-dot" style="background:#22c55e;"></span>
+                    <span>Sales</span>
+                  </div>
+                  <span class="dl-val">8 (19%)</span>
+                </div>
+                <div class="dl-item">
+                  <div class="dl-label-wrap">
+                    <span class="dl-dot" style="background:#eab308;"></span>
+                    <span>Accounts</span>
+                  </div>
+                  <span class="dl-val">6 (14%)</span>
+                </div>
+                <div class="dl-item">
+                  <div class="dl-label-wrap">
+                    <span class="dl-dot" style="background:#a855f7;"></span>
+                    <span>IT</span>
+                  </div>
+                  <span class="dl-val">5 (12%)</span>
+                </div>
+                <div class="dl-item">
+                  <div class="dl-label-wrap">
+                    <span class="dl-dot" style="background:#ef4444;"></span>
+                    <span>HR</span>
+                  </div>
+                  <span class="dl-val">4 (10%)</span>
+                </div>
+                <div class="dl-item">
+                  <div class="dl-label-wrap">
+                    <span class="dl-dot" style="background:#06b6d4;"></span>
+                    <span>Management</span>
+                  </div>
+                  <span class="dl-val">4 (10%)</span>
+                </div>
+                <div class="dl-item">
+                  <div class="dl-label-wrap">
+                    <span class="dl-dot" style="background:#64748b;"></span>
+                    <span>Others</span>
+                  </div>
+                  <span class="dl-val">3 (7%)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANEL 2: ROLE WISE DISTRIBUTION -->
+          <div class="rc-panel">
+            <div class="rc-header">
+              <div class="rc-title">
+                <svg viewBox="0 0 20 20" fill="#f0a500" width="12" height="12"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+                ROLE WISE DISTRIBUTION
+              </div>
+            </div>
+
+            <div class="role-bars">
+              <!-- Admin (4) -->
+              <div class="rb-item">
+                <span class="rb-name">Admin</span>
+                <div class="rb-bar-wrap">
+                  <div class="rb-fill" style="width: 28.5%; background: #0284c7;"></div>
+                </div>
+                <span class="rb-count">4</span>
+              </div>
+              <!-- Manager (6) -->
+              <div class="rb-item">
+                <span class="rb-name">Manager</span>
+                <div class="rb-bar-wrap">
+                  <div class="rb-fill" style="width: 42.8%; background: #22c55e;"></div>
+                </div>
+                <span class="rb-count">6</span>
+              </div>
+              <!-- Executive (14) -->
+              <div class="rb-item">
+                <span class="rb-name">Executive</span>
+                <div class="rb-bar-wrap">
+                  <div class="rb-fill" style="width: 100%; background: #eab308;"></div>
+                </div>
+                <span class="rb-count">14</span>
+              </div>
+              <!-- Operator (10) -->
+              <div class="rb-item">
+                <span class="rb-name">Operator</span>
+                <div class="rb-bar-wrap">
+                  <div class="rb-fill" style="width: 71.4%; background: #f97316;"></div>
+                </div>
+                <span class="rb-count">10</span>
+              </div>
+              <!-- Others (8) -->
+              <div class="rb-item">
+                <span class="rb-name">Others</span>
+                <div class="rb-bar-wrap">
+                  <div class="rb-fill" style="width: 57.1%; background: #a855f7;"></div>
+                </div>
+                <span class="rb-count">8</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANEL 3: RECENT ACTIVITY -->
+          <div class="rc-panel">
+            <div class="rc-header">
+              <div class="rc-title">
+                <svg viewBox="0 0 20 20" fill="#f0a500" width="12" height="12"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                RECENT ACTIVITY
+              </div>
+              <a class="rc-link" id="act-view-all">View All &rarr;</a>
+            </div>
+
+            <div class="activity-stream">
+              <!-- Item 1 -->
+              <div class="act-item">
+                <div class="act-ic act-ic-gold">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" clip-rule="evenodd"/></svg>
+                </div>
+                <div class="act-text-wrap">
+                  <span class="act-text">Pavan Kumar logged in</span>
+                  <span class="act-time">2 hours ago</span>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="act-item">
+                <div class="act-ic act-ic-orange">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+                </div>
+                <div class="act-text-wrap">
+                  <span class="act-text">Divya S applied for leave</span>
+                  <span class="act-time">4 hours ago</span>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="act-item">
+                <div class="act-ic act-ic-green">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg>
+                </div>
+                <div class="act-text-wrap">
+                  <span class="act-text">Ramesh K updated profile</span>
+                  <span class="act-time">1 day ago</span>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="act-item">
+                <div class="act-ic act-ic-cyan">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/></svg>
+                </div>
+                <div class="act-text-wrap">
+                  <span class="act-text">New employee Harika D added</span>
+                  <span class="act-time">2 days ago</span>
+                </div>
+              </div>
+
+              <!-- Item 5 -->
+              <div class="act-item">
+                <div class="act-ic act-ic-blue">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+                </div>
+                <div class="act-text-wrap">
+                  <span class="act-text">Karthik V marked attendance</span>
+                  <span class="act-time">2 days ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+      <span class="sb-l">UDAYARAVI WEAVE MASTER &nbsp;|&nbsp; Employees Management</span>
+      <span class="sb-r">Build Better Weaves &nbsp;|&nbsp; <span id="sb-dt">13-Aug-2026 04:25 PM</span></span>
+    </div>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="employees.js"></script>
+<script>
+function toggleWorkerAttendance(workerId, name) {
+  const card = document.getElementById(`worker-card-${workerId}`);
+  const badge = document.getElementById(`att-badge-${workerId}`);
+  const btn = document.getElementById(`att-btn-${workerId}`);
+  const presEl = document.getElementById('stat-emp-present');
+  const absEl = document.getElementById('stat-emp-absent');
+  
+  if (!badge) return;
+  const isPres = badge.textContent.includes('PRESENT');
+  
+  if (isPres) {
+    // Switch to Absent
+    card.style.borderLeftColor = "#ef4444";
+    card.style.background = "#180f12";
+    badge.className = "sbadge sb-out";
+    badge.textContent = "🔴 ABSENT";
+    btn.textContent = "🔴 MARK PRESENT (हाजिर करें)";
+    btn.style.background = "#1e3a8a";
+    if (presEl) presEl.textContent = parseInt(presEl.textContent, 10) - 1;
+    if (absEl) absEl.textContent = parseInt(absEl.textContent, 10) + 1;
+    showSimpleToast(`🔴 Marked ${name} ABSENT (छुट्टी दर्ज हुई)`);
+  } else {
+    // Switch to Present
+    card.style.borderLeftColor = "#22c55e";
+    card.style.background = "#0f172a";
+    badge.className = "sbadge sb-in";
+    badge.textContent = "🟢 PRESENT";
+    btn.textContent = "🟢 MARK ABSENT (गैरहाजिर करें)";
+    btn.style.background = "#15803d";
+    if (presEl) presEl.textContent = parseInt(presEl.textContent, 10) + 1;
+    if (absEl) absEl.textContent = parseInt(absEl.textContent, 10) - 1;
+    showSimpleToast(`🟢 Marked ${name} PRESENT (हाजिर दर्ज हुई)`);
+  }
+}
+
+function quickAddWorker() {
+  const name = prompt("Enter Worker Name (कारीगर का नाम):", "Prakash N");
+  if (!name) return;
+  const loom = prompt("Loom or Department (लूम नंबर / काम):", "Loom L-06");
+  
+  const totalEl = document.getElementById('stat-emp-total');
+  if (totalEl) {
+    totalEl.textContent = parseInt(totalEl.textContent, 10) + 1;
+  }
+  showSimpleToast(`✅ Added ${name} (${loom}) to Team! (कारीगर जुड़ गया)`);
+}
+</script>
+</body>
+</html>

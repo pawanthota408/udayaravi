@@ -1,0 +1,902 @@
+/* ============================================================
+   UDAYARAVI WEAVE MASTER — CORPORATE & PROFESSIONAL DESIGN SYSTEM
+   Typography: Inter (Clean, legible, modern enterprise)
+   Palette: Executive Slate (#0b0f17, #111827, #1e293b, #334155)
+   Accents: Muted warm gold (#d97706, #f59e0b) & soft status pills
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Global Font Override */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, text, tspan, svg text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+  background-color: #0b0f17;
+  color: #f1f5f9;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings and numbers font reset */
+h1, h2, h3, h4, h5, h6,
+.page-title, .sp-title, .tbl-title, .wm-label,
+.bc-val, .kpi-val, .metric-val, .stat-val {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Subtle, Calm Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f17;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* ============================================================
+   SIDEBAR (Calm, Elegant, Professional)
+   ============================================================ */
+.sidebar {
+  background: #0c121e !important;
+  border-right: 1px solid #1e293b !important;
+}
+
+.brand-logo-img {
+  max-width: 90px !important;
+  height: auto !important;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)) !important;
+  transition: transform 0.2s ease;
+}
+.brand-logo-img:hover {
+  transform: scale(1.02);
+}
+
+.logo-block, .logo-wrap {
+  border-bottom: 1px solid #1e293b !important;
+  padding: 14px 10px !important;
+}
+
+.sidebar-nav {
+  padding: 12px 8px !important;
+  gap: 3px !important;
+}
+
+.nav-item {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #94a3b8 !important;
+  border-radius: 6px !important;
+  padding: 7px 10px !important;
+  border: 1px solid transparent !important;
+  transition: all 0.15s ease !important;
+}
+
+.nav-item:hover {
+  color: #f8fafc !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.nav-item.active {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+}
+
+.nav-item.active .nav-ic {
+  color: #f59e0b !important;
+  filter: none !important;
+}
+
+.sidebar-footer {
+  border-top: 1px solid #1e293b !important;
+  padding: 12px 10px !important;
+  background: #090e17 !important;
+}
+
+.wm-label {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  letter-spacing: 0.08em !important;
+}
+
+.tagline {
+  font-size: 10.5px !important;
+  color: #475569 !important;
+  line-height: 1.4 !important;
+}
+
+/* ============================================================
+   TOP BAR & HEADER (Neat, Quiet, Executive)
+   ============================================================ */
+.page-header {
+  background: #0c121e !important;
+  border-bottom: 1px solid #1e293b !important;
+  padding: 12px 20px !important;
+}
+
+.page-title, h1.page-title, .main > div:first-child h1, .main-header h1 {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #f59e0b !important;
+  letter-spacing: -0.01em !important;
+}
+
+.page-sub {
+  font-size: 12px !important;
+  color: #64748b !important;
+  font-weight: 400 !important;
+}
+
+.breadcrumb {
+  font-size: 11px !important;
+  color: #64748b !important;
+}
+
+/* Calm Header Language Switcher */
+.lang-switcher {
+  display: flex !important;
+  align-items: center !important;
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 6px !important;
+  padding: 2px !important;
+  gap: 2px !important;
+}
+
+.lang-btn {
+  background: transparent !important;
+  border: none !important;
+  color: #94a3b8 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  padding: 3px 8px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.lang-btn:hover {
+  color: #f8fafc !important;
+}
+
+.lang-btn.active {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+}
+
+/* Quiet Status Badge (Replaces pulsing beacon) */
+.factory-beacon {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: rgba(16, 185, 129, 0.08) !important;
+  border: 1px solid rgba(16, 185, 129, 0.25) !important;
+  border-radius: 6px !important;
+  padding: 3px 9px !important;
+  font-size: 11.5px !important;
+  font-weight: 500 !important;
+  color: #34d399 !important;
+  box-shadow: none !important;
+}
+
+.beacon-pulse {
+  width: 6px !important;
+  height: 6px !important;
+  background: #10b981 !important;
+  border-radius: 50% !important;
+  box-shadow: none !important;
+  animation: none !important;
+}
+
+/* Search Bar & Profile */
+.search-bar {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 6px !important;
+}
+.search-bar input {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  color: #f8fafc !important;
+}
+.search-bar input::placeholder {
+  color: #64748b !important;
+}
+
+.user-profile {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 6px !important;
+}
+
+/* ============================================================
+   KPI METRIC CARDS (Professional & Corporate)
+   ============================================================ */
+.cards-row-simple,
+.row-cards,
+.cards-row,
+.stats-grid,
+.top-metrics-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 14px !important;
+  margin-bottom: 18px !important;
+}
+
+@media (max-width: 1024px) {
+  .cards-row-simple, .row-cards, .cards-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+.big-card, .kpi-card {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  padding: 14px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
+  transition: border-color 0.15s ease !important;
+}
+
+.big-card:hover, .kpi-card:hover {
+  border-color: #334155 !important;
+  transform: none !important;
+}
+
+.big-card .bc-icon {
+  display: none !important; /* Hide oversized cartoon icons */
+}
+
+.big-card .bc-info {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  gap: 4px !important;
+}
+
+.bc-title, .kpi-title {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #94a3b8 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  opacity: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+.bc-val, .kpi-val {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #f8fafc !important;
+  text-shadow: none !important;
+  line-height: 1.2 !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.bc-sub, .kpi-sub {
+  font-size: 11.5px !important;
+  font-weight: 400 !important;
+  color: #64748b !important;
+  opacity: 1 !important;
+}
+
+/* Subtle, Quiet Card Variances (No screaming glows) */
+.bc-green, .bc-blue, .bc-amber, .bc-red {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
+}
+.bc-green .bc-sub { color: #34d399 !important; }
+.bc-blue .bc-sub { color: #60a5fa !important; }
+.bc-amber .bc-sub { color: #fbbf24 !important; }
+.bc-red .bc-sub { color: #f87171 !important; }
+
+/* ============================================================
+   PANELS & CONTAINERS (Clean & Calm)
+   ============================================================ */
+.panel, .set-panel, .card, .chart-panel, .table-card, .scorecard-panel {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
+}
+
+.panel-header, .sp-header, .card-header {
+  border-bottom: 1px solid #1e293b !important;
+  padding: 12px 16px !important;
+}
+
+.panel-title, .sp-title {
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #f8fafc !important;
+}
+
+.panel-sub, .sp-sub {
+  font-size: 11.5px !important;
+  color: #64748b !important;
+}
+
+/* ============================================================
+   TABLES (Clean Corporate Styling)
+   ============================================================ */
+table {
+  font-family: 'Inter', sans-serif !important;
+  border-collapse: collapse !important;
+  width: 100% !important;
+}
+
+thead th, th {
+  background: #0d1422 !important;
+  color: #94a3b8 !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  padding: 9px 12px !important;
+  border-bottom: 1px solid #1e293b !important;
+  border-top: none !important;
+}
+
+tbody td, td {
+  padding: 9px 12px !important;
+  font-size: 12.5px !important;
+  color: #e2e8f0 !important;
+  border-bottom: 1px solid #162032 !important;
+  background: transparent !important;
+}
+
+tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* ============================================================
+   STATUS BADGES (Soft Muted Corporate Pills)
+   ============================================================ */
+.badge, .status-badge, .badge-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 2px 7px !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  text-transform: capitalize !important;
+  letter-spacing: 0 !important;
+}
+
+.badge-success, .badge-running, .badge-active, .badge-present {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(16, 185, 129, 0.25) !important;
+}
+
+.badge-warning, .badge-low, .badge-pending, .badge-transit {
+  background: rgba(245, 158, 11, 0.12) !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(245, 158, 11, 0.25) !important;
+}
+
+.badge-danger, .badge-stopped, .badge-empty, .badge-overdue, .badge-absent {
+  background: rgba(239, 68, 68, 0.12) !important;
+  color: #f87171 !important;
+  border: 1px solid rgba(239, 68, 68, 0.25) !important;
+}
+
+.badge-info, .badge-neutral {
+  background: rgba(59, 130, 246, 0.12) !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(59, 130, 246, 0.25) !important;
+}
+
+/* ============================================================
+   BUTTONS (Neat, Crisp Corporate Controls)
+   ============================================================ */
+button, .btn {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.btn-primary, .btn-main {
+  background: #f59e0b !important;
+  color: #0b0f17 !important;
+  border: 1px solid #d97706 !important;
+  font-weight: 600 !important;
+  padding: 6px 12px !important;
+}
+.btn-primary:hover {
+  background: #fbbf24 !important;
+}
+
+.btn-secondary, .btn-outline {
+  background: #162032 !important;
+  color: #e2e8f0 !important;
+  border: 1px solid #1e293b !important;
+  padding: 6px 12px !important;
+}
+.btn-secondary:hover {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+
+/* Tone down any floor action buttons */
+.btn-big-action {
+  padding: 6px 12px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  border: 1px solid #1e293b !important;
+}
+
+.btn-green-action {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: #34d399 !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.btn-blue-action {
+  background: rgba(59, 130, 246, 0.12) !important;
+  color: #60a5fa !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+.btn-amber-action {
+  background: rgba(245, 158, 11, 0.12) !important;
+  color: #fbbf24 !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Loom Overview Grid */
+.loom-grid-simple {
+  gap: 10px !important;
+}
+
+.loom-tile-simple {
+  background: #0c121e !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  padding: 12px 14px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
+  border-left: 1px solid #1e293b !important;
+  transition: border-color 0.15s ease, background 0.15s ease !important;
+}
+
+.loom-tile-simple:hover {
+  border-color: #334155 !important;
+}
+
+.loom-tile-simple.running,
+.loom-tile-simple.stopped,
+.loom-tile-simple.paused {
+  border: 1px solid #1e293b !important;
+  border-left: 1px solid #1e293b !important;
+  background: #0c121e !important;
+}
+
+.loom-num {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.loom-meters {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #f1f5f9 !important;
+}
+
+/* ============================================================
+   STATUS BAR (Quiet, Bottom Line)
+   ============================================================ */
+.status-bar {
+  background: #090e17 !important;
+  border-top: 1px solid #1e293b !important;
+  color: #64748b !important;
+  font-size: 11px !important;
+  font-family: 'Inter', sans-serif !important;
+  padding: 4px 16px !important;
+}
+
+.status-bar span {
+  color: #64748b !important;
+}
+
+/* ============================================================
+   EXECUTIVE KPI GRID & CORPORATE CARDS
+   ============================================================ */
+.kpi-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+  margin-bottom: 24px !important;
+}
+
+@media (max-width: 1024px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .kpi-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.kpi-card {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  padding: 16px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  transition: border-color 0.15s ease !important;
+}
+
+.kpi-card:hover {
+  border-color: #334155 !important;
+}
+
+.kpi-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-bottom: 2px !important;
+}
+
+.kpi-title {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #94a3b8 !important;
+}
+
+.kpi-val {
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  color: #f8fafc !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.kpi-sub {
+  font-size: 12px !important;
+  color: #64748b !important;
+}
+
+.corporate-card {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  padding: 18px 20px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
+}
+
+/* ============================================================
+   FULL SCREEN LAYOUT NORMALIZATION & TAB SYSTEM
+   ============================================================ */
+.app-root {
+  display: flex !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  overflow: hidden !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.main-wrapper {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100vh !important;
+  min-width: 0 !important;
+  width: calc(100vw - 148px) !important;
+  overflow: hidden !important;
+  background: #0b0f17 !important;
+}
+
+.main {
+  flex: 1 !important;
+  overflow-y: auto !important;
+  width: 100% !important;
+  min-height: 0 !important;
+}
+
+.status-bar {
+  width: 100% !important;
+  height: 26px !important;
+  min-height: 26px !important;
+  flex-shrink: 0 !important;
+  background: #080d1a !important;
+  border-top: 1px solid #1e293b !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 16px !important;
+}
+
+/* Corporate Tab Bar */
+.tab-bar {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  border-bottom: 1px solid #1e293b !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 6px !important;
+  flex-shrink: 0 !important;
+}
+
+.tab-btn {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #94a3b8 !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid transparent !important;
+  padding: 8px 16px !important;
+  border-radius: 4px 4px 0 0 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.15s ease !important;
+  text-transform: none !important;
+  box-shadow: none !important;
+}
+
+.tab-btn:hover {
+  color: #f8fafc !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+}
+
+.tab-btn.active {
+  color: #f59e0b !important;
+  border-bottom: 2px solid #f59e0b !important;
+  background: rgba(245, 158, 11, 0.08) !important;
+  font-weight: 600 !important;
+}
+
+.tab-btn.active svg {
+  color: #f59e0b !important;
+  filter: none !important;
+}
+
+.tab-content {
+  display: none !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+.tab-content.active {
+  display: flex !important;
+}
+
+/* Corporate Action Buttons */
+.action-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+.abtn {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border-radius: 6px !important;
+  padding: 7px 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.abtn-blue {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border: 1px solid #3b82f6 !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
+}
+
+.abtn-blue:hover {
+  background: #1d4ed8 !important;
+}
+
+.abtn-dark {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+  border: 1px solid #334155 !important;
+}
+
+.abtn-dark:hover {
+  background: #334155 !important;
+  color: #ffffff !important;
+}
+
+/* Corporate Charts Row */
+.charts-row {
+  display: grid !important;
+  grid-template-columns: 1.4fr 1fr 1fr !important;
+  gap: 14px !important;
+  min-height: 185px !important;
+  height: auto !important;
+  width: 100% !important;
+}
+
+@media (max-width: 1100px) {
+  .charts-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.chart-card {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  padding: 14px 16px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
+}
+
+.card-hd {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #cbd5e1 !important;
+  border-bottom: 1px solid #1e293b !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 10px !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+}
+
+/* Corporate Filter Row */
+.filter-row {
+  display: flex !important;
+  align-items: flex-end !important;
+  gap: 10px !important;
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+}
+
+.filter-row .fg {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  flex: 1 !important;
+  min-width: 130px !important;
+}
+
+.filter-row .fl {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #94a3b8 !important;
+}
+
+.filter-row .fw {
+  background: #0b0f17 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+}
+
+.filter-row .fs {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  color: #f8fafc !important;
+}
+
+.filter-row .sbtn {
+  background: #2563eb !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  padding: 7px 16px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  height: 32px !important;
+}
+
+.filter-row .rbtn {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+  border-radius: 6px !important;
+  padding: 7px 16px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  border: 1px solid #334155 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  height: 32px !important;
+}
+
+/* Corporate Tables */
+.tcard {
+  background: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  padding: 14px 18px !important;
+  width: 100% !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2) !important;
+}
+
+.thd {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-bottom: 1px solid #1e293b !important;
+  padding-bottom: 10px !important;
+  margin-bottom: 12px !important;
+}
+
+.thl {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #f8fafc !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.va {
+  font-size: 12px !important;
+  color: #f59e0b !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.va:hover {
+  text-decoration: underline !important;
+}
+
+

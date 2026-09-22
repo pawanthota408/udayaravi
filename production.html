@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Production — Udayaravi Weave Master</title>
+  <meta name="description" content="Record and monitor daily loom production, quality, yarn usage and wastage."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="production.css"/>
+  <link rel="stylesheet" href="corporate-theme.css"/>
+</head>
+<body>
+<div class="app-root">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="logo-block">
+      <img src="../../brain/a507fab7-2db5-406b-a76b-05c571fb76ea/.user_uploaded/media_1790079156110.png" alt="Udayaravi Creations" class="brand-logo-img" onerror="if(this.src.indexOf('logo.png')===-1)this.src='logo.png';" />
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="index.html" id="nav-dashboard">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+        <span data-i18n="nav_dashboard">Dashboard</span>
+      </a>
+      <a class="nav-item active" href="production.html" id="nav-production">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+        <span data-i18n="nav_production">Production</span>
+      </a>
+      <a class="nav-item" href="stock.html" id="nav-stock">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_stock">Stock</span>
+      </a>
+      <a class="nav-item" href="salespay.html" id="nav-salespay">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+        <span data-i18n="nav_salespay">Sales &amp; Payments</span>
+      </a>
+      <a class="nav-item" href="reports.html" id="nav-reports">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_reports">Reports</span>
+      </a>
+      <a class="nav-item" href="customers.html" id="nav-customers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+        <span data-i18n="nav_customers">Customers</span>
+      </a>
+      <a class="nav-item" href="employees.html" id="nav-employees">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_employees">Employees</span>
+      </a>
+      <a class="nav-item" href="suppliers.html" id="nav-suppliers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/></svg>
+        <span data-i18n="nav_suppliers">Suppliers</span>
+      </a>
+      <a class="nav-item" href="settings.html" id="nav-settings">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_settings">Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="wm-label">WEAVE MASTER</div>
+      <div class="toggle-row">
+        <label class="tog">
+          <input type="checkbox" checked id="master-tog"/>
+          <span class="tog-track"></span>
+        </label>
+        <span class="tog-txt" id="tog-txt">ON</span>
+      </div>
+      <div class="tagline">Weaving Progress<br/>A Stronger Tomorrow</div>
+    </div>
+  </aside>
+
+  <!-- ======= MAIN ======= -->
+  <div class="main-wrapper">
+    <main class="main" style="overflow-y:auto; scrollbar-width:thin; padding:18px 24px; display:flex; flex-direction:column; gap:16px;">
+
+      <!-- PAGE HEADER -->
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; border-bottom:1px solid #1e293b; padding-bottom:14px;">
+        <div>
+          <h1 style="font-size:18px; font-weight:700; color:#f59e0b; margin-bottom:3px; letter-spacing:-0.01em;">Loom Production Management</h1>
+          <p style="font-size:12px; color:#94a3b8;">Daily weave meters, warp quality tracking, and machine unit telemetry.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <!-- Quiet Factory Status -->
+          <div class="factory-beacon">
+            <span class="beacon-pulse"></span>
+            <span>12 Units Operational</span>
+          </div>
+
+          <!-- Language Switcher -->
+          <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="en" onclick="setAppLanguage('en')">EN</button>
+            <button class="lang-btn" data-lang="hi" onclick="setAppLanguage('hi')">हिन्दी</button>
+            <button class="lang-btn" data-lang="kn" onclick="setAppLanguage('kn')">ಕನ್ನಡ</button>
+          </div>
+
+          <!-- Add Production Button -->
+          <button class="btn-primary" id="btn-add-prod" style="padding:6px 14px;">
+            + Log Production
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 CLEAN EXECUTIVE KPI CARDS -->
+      <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;">
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Shift Output</span>
+            <span class="badge badge-success">+8.4%</span>
+          </div>
+          <div class="kpi-val">15.8 <span style="font-size:14px; color:#64748b; font-weight:400;">meters</span></div>
+          <div class="kpi-sub">Target: 20.0 m &bull; 79% achieved</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Active Machines</span>
+            <span class="badge badge-success">85.7% Cap</span>
+          </div>
+          <div class="kpi-val">12 <span style="font-size:14px; color:#64748b; font-weight:400;">/ 14</span></div>
+          <div class="kpi-sub">12 operational &bull; 2 in setup</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Fabric Quality</span>
+            <span class="badge badge-success">Optimal</span>
+          </div>
+          <div class="kpi-val">98.2%</div>
+          <div class="kpi-sub">Grade A commercial specification</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">
+            <span>Yarn Wastage</span>
+            <span class="badge badge-warning">0.8 kg</span>
+          </div>
+          <div class="kpi-val">0.42%</div>
+          <div class="kpi-sub">Within threshold (&lt; 1.2%)</div>
+        </div>
+      </div>
+
+      <!-- MACHINE FLOOR STATUS -->
+      <div class="panel" style="padding:14px 16px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #1e293b; padding-bottom:8px;">
+          <div>
+            <div class="panel-title">Active Loom Floor Units</div>
+            <div class="panel-sub">Real-time meter telemetry and production logging</div>
+          </div>
+          <span style="font-size:11.5px; color:#64748b;">Floor Shift: A-Shift (08:00 - 20:00)</span>
+        </div>
+
+        <div class="loom-grid-simple">
+          <!-- Loom 1 -->
+          <div class="loom-tile-simple running" id="ptile-1">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-num">Loom 01</span>
+              <span class="badge badge-success">Running</span>
+            </div>
+            <div style="font-size:11.5px; color:#94a3b8; margin:4px 0;">Kanchi Border (Cotton 40s)</div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-meters" id="pmeter-1">5.2 m</span>
+              <span style="font-size:11px; color:#64748b;">Ramesh</span>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:6px;">
+              <button class="btn-secondary" style="flex:1; padding:3px 6px; font-size:11px;" onclick="toggleProdLoom(1)">Pause</button>
+              <button class="btn-primary" style="padding:3px 8px; font-size:11px;" onclick="addMeter(1)">+1m</button>
+            </div>
+          </div>
+
+          <!-- Loom 2 -->
+          <div class="loom-tile-simple running" id="ptile-2">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-num">Loom 02</span>
+              <span class="badge badge-success">Running</span>
+            </div>
+            <div style="font-size:11.5px; color:#94a3b8; margin:4px 0;">Cotton Silk Saree</div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-meters" id="pmeter-2">4.8 m</span>
+              <span style="font-size:11px; color:#64748b;">Suresh</span>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:6px;">
+              <button class="btn-secondary" style="flex:1; padding:3px 6px; font-size:11px;" onclick="toggleProdLoom(2)">Pause</button>
+              <button class="btn-primary" style="padding:3px 8px; font-size:11px;" onclick="addMeter(2)">+1m</button>
+            </div>
+          </div>
+
+          <!-- Loom 3 (Stopped) -->
+          <div class="loom-tile-simple stopped" id="ptile-3">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-num">Loom 03</span>
+              <span class="badge badge-danger">Maintenance</span>
+            </div>
+            <div style="font-size:11.5px; color:#94a3b8; margin:4px 0;">Zari Weave (Thread Fix)</div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-meters" style="color:#64748b;" id="pmeter-3">3.6 m</span>
+              <span style="font-size:11px; color:#f87171;">Anil</span>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:6px;">
+              <button class="btn-primary" style="flex:1; padding:3px 6px; font-size:11px;" onclick="toggleProdLoom(3)">Resume</button>
+              <button class="btn-secondary" style="padding:3px 8px; font-size:11px;" onclick="addMeter(3)">+1m</button>
+            </div>
+          </div>
+
+          <!-- Loom 4 -->
+          <div class="loom-tile-simple running" id="ptile-4">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-num">Loom 04</span>
+              <span class="badge badge-success">Running</span>
+            </div>
+            <div style="font-size:11.5px; color:#94a3b8; margin:4px 0;">Poly Cotton 60s</div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <span class="loom-meters" id="pmeter-4">2.2 m</span>
+              <span style="font-size:11px; color:#64748b;">Ganesh</span>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:6px;">
+              <button class="btn-secondary" style="flex:1; padding:3px 6px; font-size:11px;" onclick="toggleProdLoom(4)">Pause</button>
+              <button class="btn-primary" style="padding:3px 8px; font-size:11px;" onclick="addMeter(4)">+1m</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABLE SECTION -->
+      <div class="table-section">
+        <div class="section-hd">
+          <span class="shd-icon">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
+          </span>
+          DAILY PRODUCTION ENTRIES
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="production-table">
+            <thead>
+              <tr>
+                <th>Entry ID</th>
+                <th>Date</th>
+                <th>Loom No</th>
+                <th>Shift</th>
+                <th>Operator</th>
+                <th>Design / Saree</th>
+                <th>Quality</th>
+                <th>Production (m)</th>
+                <th>Yarn Used (kg)</th>
+                <th>Wastage (kg)</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="entry-id">P-20260813-001</td>
+                <td>13-Aug-2026</td>
+                <td class="loom-no">L-01</td>
+                <td>Day</td>
+                <td>Ramesh</td>
+                <td>Kanchi Border</td>
+                <td><span class="q-badge q-first">First</span></td>
+                <td>5.2</td>
+                <td>2.8</td>
+                <td>0.1</td>
+                <td><span class="status-badge sb-completed">COMPLETED</span></td>
+                <td class="actions-cell">
+                  <button class="act-btn act-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                  <button class="act-btn act-edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                  <button class="act-btn act-del" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="entry-id">P-20260813-002</td>
+                <td>13-Aug-2026</td>
+                <td class="loom-no">L-02</td>
+                <td>Day</td>
+                <td>Suresh</td>
+                <td>Cotton Silk</td>
+                <td><span class="q-badge q-first">First</span></td>
+                <td>4.8</td>
+                <td>2.5</td>
+                <td>0.2</td>
+                <td><span class="status-badge sb-completed">COMPLETED</span></td>
+                <td class="actions-cell">
+                  <button class="act-btn act-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                  <button class="act-btn act-edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                  <button class="act-btn act-del" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="entry-id">P-20260813-003</td>
+                <td>13-Aug-2026</td>
+                <td class="loom-no">L-03</td>
+                <td>Night</td>
+                <td>Anil</td>
+                <td>Zari Weave</td>
+                <td><span class="q-badge q-second">Second</span></td>
+                <td>3.6</td>
+                <td>2.1</td>
+                <td>0.3</td>
+                <td><span class="status-badge sb-running">RUNNING</span></td>
+                <td class="actions-cell">
+                  <button class="act-btn act-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                  <button class="act-btn act-edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                  <button class="act-btn act-del" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="entry-id">P-20260813-004</td>
+                <td>13-Aug-2026</td>
+                <td class="loom-no">L-01</td>
+                <td>Night</td>
+                <td>Mahesh</td>
+                <td>Temple Design</td>
+                <td><span class="q-badge q-first">First</span></td>
+                <td>4.9</td>
+                <td>2.7</td>
+                <td>0.1</td>
+                <td><span class="status-badge sb-completed">COMPLETED</span></td>
+                <td class="actions-cell">
+                  <button class="act-btn act-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                  <button class="act-btn act-edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                  <button class="act-btn act-del" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="entry-id">P-20260812-017</td>
+                <td>12-Aug-2026</td>
+                <td class="loom-no">L-02</td>
+                <td>Day</td>
+                <td>Ravi</td>
+                <td>Plain Saree</td>
+                <td><span class="q-badge q-second">Second</span></td>
+                <td>3.2</td>
+                <td>1.8</td>
+                <td>0.2</td>
+                <td><span class="status-badge sb-completed">COMPLETED</span></td>
+                <td class="actions-cell">
+                  <button class="act-btn act-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                  <button class="act-btn act-edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                  <button class="act-btn act-del" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button>
+                </td>
+              </tr>
+              <tr>
+                <td class="entry-id">P-20260812-016</td>
+                <td>12-Aug-2026</td>
+                <td class="loom-no">L-03</td>
+                <td>Day</td>
+                <td>Suresh</td>
+                <td>Checks Design</td>
+                <td><span class="q-badge q-rejected">Rejected</span></td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td>0.0</td>
+                <td><span class="status-badge sb-pending">PENDING</span></td>
+                <td class="actions-cell">
+                  <button class="act-btn act-view" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                  <button class="act-btn act-edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                  <button class="act-btn act-del" title="Delete"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- BOTTOM PANELS -->
+      <div class="bot-panels">
+
+        <!-- Loom-wise Production -->
+        <div class="bpanel">
+          <div class="bpanel-hd">
+            <span class="bphd-icon amber-icon">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
+            </span>
+            LOOM-WISE PRODUCTION <span class="hd-sub">(Today)</span>
+          </div>
+          <table class="ptab">
+            <thead>
+              <tr><th>Loom No</th><th>Target (m)</th><th>Produced (m)</th><th>Progress</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="loom-no">L-01</td><td>10</td><td>5.2</td>
+                <td>
+                  <div class="prog-wrap">
+                    <div class="prog-bar prog-green" style="width:52%"></div>
+                  </div>
+                  <span class="prog-pct">52%</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="loom-no">L-02</td><td>10</td><td>4.8</td>
+                <td>
+                  <div class="prog-wrap">
+                    <div class="prog-bar prog-blue" style="width:48%"></div>
+                  </div>
+                  <span class="prog-pct">48%</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="loom-no">L-03</td><td>10</td><td>3.6</td>
+                <td>
+                  <div class="prog-wrap">
+                    <div class="prog-bar prog-amber" style="width:36%"></div>
+                  </div>
+                  <span class="prog-pct">36%</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Quality Breakdown -->
+        <div class="bpanel">
+          <div class="bpanel-hd">
+            <span class="bphd-icon amber-icon">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            </span>
+            QUALITY BREAKDOWN <span class="hd-sub">(Today)</span>
+          </div>
+          <table class="ptab">
+            <thead>
+              <tr><th>Quality</th><th>Quantity (m)</th><th>Percentage</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="dot gdot"></span>First</td>
+                <td>10.0</td>
+                <td class="pct-cell pct-green">66.7%</td>
+              </tr>
+              <tr>
+                <td><span class="dot ydot"></span>Second</td>
+                <td>3.6</td>
+                <td class="pct-cell pct-yellow">24.0%</td>
+              </tr>
+              <tr>
+                <td><span class="dot rdot"></span>Rejected</td>
+                <td>1.4</td>
+                <td class="pct-cell pct-red">9.3%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Yarn Consumption -->
+        <div class="bpanel bpanel-yarn">
+          <div class="bpanel-hd">
+            <span class="bphd-icon amber-icon">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M12 1.586l-4 4v12.828l4-4V1.586zM3.707 3.293A1 1 0 002 4v10a1 1 0 00.293.707L6 18.414V5.586L3.707 3.293zm10.586 0L12 5.586v12.828l2.293-2.293A1 1 0 0018 14V4a1 1 0 00-1.707-.707z" clip-rule="evenodd"/></svg>
+            </span>
+            YARN CONSUMPTION <span class="hd-sub">(Today)</span>
+          </div>
+          <div class="yarn-stats">
+            <div class="yarn-row">
+              <span class="yarn-label">Total Yarn Used</span>
+              <span class="yarn-val">7.4 kg</span>
+            </div>
+            <div class="yarn-row">
+              <span class="yarn-label">Total Wastage</span>
+              <span class="yarn-val">0.8 kg</span>
+            </div>
+            <div class="yarn-row">
+              <span class="yarn-label">Wastage %</span>
+              <span class="yarn-val yarn-orange">9.8%</span>
+            </div>
+            <div class="yarn-row">
+              <span class="yarn-label">Avg. per meter</span>
+              <span class="yarn-val">0.49 kg</span>
+            </div>
+          </div>
+          <button class="fab-btn" id="btn-fab-add">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"/></svg>
+            ADD PRODUCTION
+          </button>
+        </div>
+
+      </div><!-- /bot-panels -->
+    </main>
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+      <span class="sb-left">UDAYARAVI WEAVE MASTER &nbsp;|&nbsp; Production Management System</span>
+      <span class="sb-right">Build Better Weaves &nbsp;|&nbsp; <span id="sb-datetime">13-Aug-2026 04:25 PM</span></span>
+    </div>
+  </div><!-- /main-wrapper -->
+
+<script>
+function toggleProdLoom(id) {
+  const tile = document.getElementById('ptile-' + id);
+  if (!tile) return;
+  
+  const badge = tile.querySelector('.badge');
+  const btn = tile.querySelector('button');
+  const isRunning = tile.classList.contains('running');
+  
+  if (isRunning) {
+    tile.classList.remove('running');
+    tile.classList.add('stopped');
+    if (badge) {
+      badge.className = 'badge badge-warning';
+      badge.textContent = 'Paused';
+    }
+    if (btn) {
+      btn.className = 'btn-primary';
+      btn.textContent = 'Resume';
+    }
+    if (typeof showSimpleToast === 'function') {
+      showSimpleToast('Loom L-0' + id + ' Paused', 'info');
+    }
+  } else {
+    tile.classList.remove('stopped');
+    tile.classList.add('running');
+    if (badge) {
+      badge.className = 'badge badge-success';
+      badge.textContent = 'Running';
+    }
+    if (btn) {
+      btn.className = 'btn-secondary';
+      btn.textContent = 'Pause';
+    }
+    if (typeof showSimpleToast === 'function') {
+      showSimpleToast('Loom L-0' + id + ' Resumed & Running', 'success');
+    }
+  }
+}
+
+function addMeter(id) {
+  const el = document.getElementById('pmeter-' + id);
+  let val = parseFloat(el.textContent) || 0;
+  val = (val + 1.0).toFixed(1);
+  el.textContent = val + ' m';
+  showSimpleToast('Added +1 Meter to Loom L-0' + id + '! (Total: ' + val + 'm) 📏', 'success');
+}
+</script>
+<script src="i18n.js"></script>
+<script src="production.js"></script>
+</body>
+</html>

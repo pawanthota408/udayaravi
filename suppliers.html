@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Suppliers — Udayaravi Weave Master</title>
+  <meta name="description" content="Manage your suppliers, purchase orders, payments and build stronger vendor relationships."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="suppliers.css"/>
+  <link rel="stylesheet" href="corporate-theme.css"/>
+</head>
+<body>
+<div class="app-root">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <div class="logo-block">
+      <img src="../../brain/a507fab7-2db5-406b-a76b-05c571fb76ea/.user_uploaded/media_1790079156110.png" alt="Udayaravi Creations" class="brand-logo-img" onerror="if(this.src.indexOf('logo.png')===-1)this.src='logo.png';" />
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="index.html" id="nav-dashboard">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+        <span data-i18n="nav_dashboard">Dashboard</span>
+      </a>
+      <a class="nav-item" href="production.html" id="nav-production">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+        <span data-i18n="nav_production">Production</span>
+      </a>
+      <a class="nav-item" href="stock.html" id="nav-stock">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_stock">Stock</span>
+      </a>
+      <a class="nav-item" href="salespay.html" id="nav-salespay">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg>
+        <span data-i18n="nav_salespay">Sales &amp; Payments</span>
+      </a>
+      <a class="nav-item" href="reports.html" id="nav-reports">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_reports">Reports</span>
+      </a>
+      <a class="nav-item" href="customers.html" id="nav-customers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+        <span data-i18n="nav_customers">Customers</span>
+      </a>
+      <a class="nav-item" href="employees.html" id="nav-employees">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_employees">Employees</span>
+      </a>
+      <a class="nav-item active" href="suppliers.html" id="nav-suppliers">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/></svg>
+        <span data-i18n="nav_suppliers">Suppliers</span>
+      </a>
+      <a class="nav-item" href="settings.html" id="nav-settings">
+        <svg class="nav-ic" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+        <span data-i18n="nav_settings">Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="wm-label">WEAVE MASTER</div>
+      <div class="toggle-row">
+        <label class="tog">
+          <input type="checkbox" checked id="master-tog"/>
+          <span class="tog-track"></span>
+        </label>
+        <span class="tog-txt" id="tog-txt">ON</span>
+      </div>
+      <div class="tagline">Weaving Progress<br/>A Stronger Tomorrow</div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN WRAPPER ================= -->
+  <div class="main-wrapper">
+    <main class="main">
+
+      <!-- PAGE HEADER -->
+      <div class="page-header" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:24px;">
+        <div class="ph-left">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
+            <h1 class="page-title" style="margin:0;font-size:18px;font-weight:700;color:#f59e0b;letter-spacing:-0.01em;">Suppliers &amp; Procurement</h1>
+            <span class="badge-success" style="font-size:12px;padding:4px 10px;">56 Vendors Active</span>
+          </div>
+          <p class="page-sub" style="margin:0;font-size:13px;color:#94a3b8;">
+            Vendor relationships, purchase order pipelines, and raw material receipt logs.
+          </p>
+        </div>
+        <div class="ph-right" style="display:flex;align-items:center;gap:12px;">
+          <div class="lang-switcher" id="lang-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="hi">HI</button>
+            <button class="lang-btn" data-lang="kn">KN</button>
+          </div>
+          <button class="btn-primary" id="btn-add-sup-top" onclick="quickOrderYarn()">
+            + Order Raw Materials
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 EXECUTIVE KPI CARDS -->
+      <div class="kpi-grid">
+        <!-- Total Suppliers -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Total Suppliers</span>
+            <span class="badge-info">Registered</span>
+          </div>
+          <div class="kpi-val" id="stat-sup-total">56</div>
+          <div class="kpi-sub">Spinning mills, silk traders, dye houses</div>
+        </div>
+
+        <!-- Active Vendors -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Active Accounts</span>
+            <span class="badge-success">Operational</span>
+          </div>
+          <div class="kpi-val">48</div>
+          <div class="kpi-sub">Fulfilling purchase orders this quarter</div>
+        </div>
+
+        <!-- Pending to Pay -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Outstanding Payables</span>
+            <span class="badge-danger">Pending Dues</span>
+          </div>
+          <div class="kpi-val" id="stat-sup-due">₹3,42,600</div>
+          <div class="kpi-sub">8 invoices pending supplier settlement</div>
+        </div>
+
+        <!-- Materials In Transit -->
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Inbound Deliveries</span>
+            <span class="badge-warning">In Transit</span>
+          </div>
+          <div class="kpi-val">2 Shipments</div>
+          <div class="kpi-sub">Arriving at central godown today</div>
+        </div>
+      </div>
+
+      <!-- INBOUND SHIPMENTS TRACKER -->
+      <div class="corporate-card" style="margin-bottom:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #1e293b;">
+          <div>
+            <h2 style="font-size:15px;font-weight:600;color:#f8fafc;margin:0;">Inbound Shipments &amp; Material Gate Entries</h2>
+            <span style="font-size:12px;color:#94a3b8;">Active freight tracking for incoming yarn and raw materials</span>
+          </div>
+          <button class="btn-secondary" onclick="quickOrderYarn()" style="padding:6px 14px;font-size:12px;">+ New Purchase Order</button>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;">
+          <!-- Shipment 1: Cotton Yarn Mill -->
+          <div id="ship-tile-1" style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+              <div>
+                <div style="font-size:14px;font-weight:600;color:#f8fafc;">Coimbatore Cotton Spinners</div>
+                <div style="font-size:12px;color:#94a3b8;">500 kg Cotton Yarn (40s Count)</div>
+              </div>
+              <span class="badge-warning" id="ship-badge-1">In Transit</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#cbd5e1;padding:8px 0;border-top:1px solid #1e293b;border-bottom:1px solid #1e293b;margin-bottom:12px;">
+              <span>Vehicle: <strong style="color:#f8fafc;">TN 38 BG 4412</strong></span>
+              <span style="color:#f59e0b;">ETA 5:00 PM</span>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn-primary" id="ship-btn-1" style="flex:2;padding:6px 12px;font-size:12px;" onclick="confirmYarnArrival(1, 'Coimbatore Cotton Spinners', '500 kg Cotton Yarn')">
+                Confirm Receipt
+              </button>
+              <button class="btn-secondary" style="flex:1;padding:6px 12px;font-size:12px;" onclick="showSimpleToast('Calling Logistics: +91 98422 33445')">
+                Contact
+              </button>
+            </div>
+          </div>
+
+          <!-- Shipment 2: Pure Silk Exporters -->
+          <div id="ship-tile-2" style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+              <div>
+                <div style="font-size:14px;font-weight:600;color:#f8fafc;">Bengaluru Pure Silk Exporters</div>
+                <div style="font-size:12px;color:#94a3b8;">100 kg Mulberry Silk Yarn</div>
+              </div>
+              <span class="badge-success">Received</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#cbd5e1;padding:8px 0;border-top:1px solid #1e293b;border-bottom:1px solid #1e293b;margin-bottom:12px;">
+              <span>Invoice: <strong style="color:#f8fafc;">₹45,000</strong></span>
+              <span style="color:#ef4444;font-weight:600;">Payment Due</span>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn-primary" style="flex:2;padding:6px 12px;font-size:12px;background:#3b82f6;" onclick="paySupplierBill('Bengaluru Pure Silk', 45000)">
+                Settle ₹45,000
+              </button>
+              <button class="btn-secondary" style="flex:1;padding:6px 12px;font-size:12px;" onclick="showSimpleToast('Calling Supplier: +91 94480 11223')">
+                Contact
+              </button>
+            </div>
+          </div>
+
+          <!-- Shipment 3: Surya Zari Works -->
+          <div id="ship-tile-3" style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+              <div>
+                <div style="font-size:14px;font-weight:600;color:#f8fafc;">Surya Gold Zari (Surat)</div>
+                <div style="font-size:12px;color:#94a3b8;">50 kg Gold Zari Thread</div>
+              </div>
+              <span class="badge-warning" id="ship-badge-3">Dispatched</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#cbd5e1;padding:8px 0;border-top:1px solid #1e293b;border-bottom:1px solid #1e293b;margin-bottom:12px;">
+              <span>Courier: <strong style="color:#f8fafc;">VRL Logistics</strong></span>
+              <span style="color:#f59e0b;">ETA Tomorrow</span>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn-primary" id="ship-btn-3" style="flex:2;padding:6px 12px;font-size:12px;" onclick="confirmYarnArrival(3, 'Surya Gold Zari', '50 kg Gold Zari')">
+                Confirm Receipt
+              </button>
+              <button class="btn-secondary" style="flex:1;padding:6px 12px;font-size:12px;" onclick="showSimpleToast('Calling Supplier: +91 98251 77665')">
+                Contact
+              </button>
+            </div>
+          </div>
+
+          <!-- Shipment 4: Raghav Chemicals -->
+          <div style="background:#0c121e;border:1px solid #1e293b;border-radius:8px;padding:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+              <div>
+                <div style="font-size:14px;font-weight:600;color:#f8fafc;">Raghav Dyes &amp; Chemicals</div>
+                <div style="font-size:12px;color:#94a3b8;">Salem, TN | Red &amp; Maroon Dyes</div>
+              </div>
+              <span class="badge-danger">₹18k Due</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#cbd5e1;padding:8px 0;border-top:1px solid #1e293b;border-bottom:1px solid #1e293b;margin-bottom:12px;">
+              <span>Last Batch: <strong style="color:#f8fafc;">100 L Dyes</strong></span>
+              <span style="color:#ef4444;font-weight:600;">₹18,000 Pending</span>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn-primary" style="flex:2;padding:6px 12px;font-size:12px;background:#ef4444;" onclick="paySupplierBill('Raghav Dyes', 18000)">
+                Settle ₹18,000
+              </button>
+              <button class="btn-secondary" style="flex:1;padding:6px 12px;font-size:12px;" onclick="showSimpleToast('Calling Supplier: +91 94435 44332')">
+                Contact
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-TABS ROW + ADD SUPPLIER BTN -->
+      <div class="subtabs-row">
+        <div class="subtabs-group">
+          <button class="subtab-btn active">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/></svg>
+            All Suppliers
+          </button>
+          <button class="subtab-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
+            Categories
+          </button>
+          <button class="subtab-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+            Purchase Orders
+          </button>
+          <button class="subtab-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/></svg>
+            Payments
+          </button>
+          <button class="subtab-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+            Performance
+          </button>
+          <button class="subtab-btn">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"/></svg>
+            Documents
+          </button>
+        </div>
+        <button class="btn-add-sup" id="btn-add-supplier">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"/></svg>
+          + Add Supplier
+        </button>
+      </div>
+
+      <!-- FILTER BAR -->
+      <div class="filter-bar">
+        <div class="filter-group">
+          <span class="f-lbl">Supplier Type</span>
+          <select class="f-sel" id="f-sup-type">
+            <option value="All Types">All Types</option>
+            <option value="Fabric">Fabric</option>
+            <option value="Yarn">Yarn</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Chemicals">Chemicals</option>
+            <option value="Raw Material">Raw Material</option>
+            <option value="Packaging">Packaging</option>
+            <option value="Spare Parts">Spare Parts</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <span class="f-lbl">City</span>
+          <select class="f-sel" id="f-city">
+            <option value="All Cities">All Cities</option>
+            <option value="Erode">Erode</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Tiruppur">Tiruppur</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Salem">Salem</option>
+            <option value="Vijayawada">Vijayawada</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Surat">Surat</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <span class="f-lbl">Status</span>
+          <select class="f-sel" id="f-status">
+            <option value="All Status">All Status</option>
+            <option value="Active">Active</option>
+            <option value="On Hold">On Hold</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+
+        <div class="f-search-box">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
+          <input type="text" id="f-search-sup" placeholder="Search by name, GST, contact or ID..."/>
+        </div>
+
+        <button class="btn-f-search" id="btn-search">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
+          Search
+        </button>
+
+        <button class="btn-f-reset" id="btn-reset">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
+          Reset
+        </button>
+      </div>
+
+      <!-- CONTENT GRID: TABLE (LEFT) + PANELS (RIGHT) -->
+      <div class="content-grid">
+
+        <!-- LEFT COLUMN: TABLE + BOTTOM MANAGEMENT TILES -->
+        <div class="left-col">
+
+          <!-- TABLE CARD -->
+          <div class="table-card">
+            <div class="tc-header">
+              <div class="tc-title">
+                <svg viewBox="0 0 20 20" fill="#f0a500" width="14" height="14"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/></svg>
+                SUPPLIER LIST
+              </div>
+              <span class="tc-count">Showing 1 - 10 of 56 suppliers</span>
+            </div>
+
+            <div class="table-scroll">
+              <table class="table-sup" id="table-suppliers">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Supplier Code</th>
+                    <th>Supplier Name</th>
+                    <th>Type</th>
+                    <th>City</th>
+                    <th>Contact Person</th>
+                    <th>Mobile</th>
+                    <th>Outstanding (₹)</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1: Shree Textiles -->
+                  <tr data-type="Fabric" data-status="Active">
+                    <td>1</td>
+                    <td class="sup-code-cell">SUP-001</td>
+                    <td class="sup-name-cell">Shree Textiles</td>
+                    <td><span class="badge-type bt-fabric">Fabric</span></td>
+                    <td>Erode</td>
+                    <td>Ravi Kumar</td>
+                    <td>9876543210</td>
+                    <td class="amt-cell">1,25,000</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2: Modern Yarns -->
+                  <tr data-type="Yarn" data-status="Active">
+                    <td>2</td>
+                    <td class="sup-code-cell">SUP-002</td>
+                    <td class="sup-name-cell">Modern Yarns</td>
+                    <td><span class="badge-type bt-yarn">Yarn</span></td>
+                    <td>Coimbatore</td>
+                    <td>Suresh Babu</td>
+                    <td>9123456789</td>
+                    <td class="amt-cell">56,400</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3: Sri Lakshmi Traders -->
+                  <tr data-type="Accessories" data-status="Active">
+                    <td>3</td>
+                    <td class="sup-code-cell">SUP-003</td>
+                    <td class="sup-name-cell">Sri Lakshmi Traders</td>
+                    <td><span class="badge-type bt-accessories">Accessories</span></td>
+                    <td>Tiruppur</td>
+                    <td>Lakshmi Narayan</td>
+                    <td>9988776655</td>
+                    <td class="amt-cell">0</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4: National Dyes -->
+                  <tr data-type="Chemicals" data-status="On Hold">
+                    <td>4</td>
+                    <td class="sup-code-cell">SUP-004</td>
+                    <td class="sup-name-cell">National Dyes</td>
+                    <td><span class="badge-type bt-chemicals">Chemicals</span></td>
+                    <td>Mumbai</td>
+                    <td>Amit Shah</td>
+                    <td>9845678901</td>
+                    <td class="amt-cell">78,200</td>
+                    <td><span class="st-badge st-hold">On Hold</span></td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 5: Venkateswara Mills -->
+                  <tr data-type="Raw Material" data-status="Active">
+                    <td>5</td>
+                    <td class="sup-code-cell">SUP-005</td>
+                    <td class="sup-name-cell">Venkateswara Mills</td>
+                    <td><span class="badge-type bt-raw">Raw Material</span></td>
+                    <td>Salem</td>
+                    <td>Prakash R</td>
+                    <td>9876123456</td>
+                    <td class="amt-cell">2,10,000</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 6: Andhra Spinners -->
+                  <tr data-type="Yarn" data-status="Active">
+                    <td>6</td>
+                    <td class="sup-code-cell">SUP-006</td>
+                    <td class="sup-name-cell">Andhra Spinners</td>
+                    <td><span class="badge-type bt-yarn">Yarn</span></td>
+                    <td>Vijayawada</td>
+                    <td>Srinivas</td>
+                    <td>7894561230</td>
+                    <td class="amt-cell">0</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 7: Kaveri Packaging -->
+                  <tr data-type="Packaging" data-status="Active">
+                    <td>7</td>
+                    <td class="sup-code-cell">SUP-007</td>
+                    <td class="sup-name-cell">Kaveri Packaging</td>
+                    <td><span class="badge-type bt-packaging">Packaging</span></td>
+                    <td>Chennai</td>
+                    <td>Hariharan</td>
+                    <td>9988001122</td>
+                    <td class="amt-cell">34,500</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 8: Raghav Chemicals -->
+                  <tr data-type="Chemicals" data-status="Inactive">
+                    <td>8</td>
+                    <td class="sup-code-cell">SUP-008</td>
+                    <td class="sup-name-cell">Raghav Chemicals</td>
+                    <td><span class="badge-type bt-chemicals">Chemicals</span></td>
+                    <td>Hyderabad</td>
+                    <td>Raghavendra</td>
+                    <td>9012345678</td>
+                    <td class="amt-cell">89,600</td>
+                    <td><span class="st-badge st-inactive">Inactive</span></td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 9: Sai Powerloom Parts -->
+                  <tr data-type="Spare Parts" data-status="Active">
+                    <td>9</td>
+                    <td class="sup-code-cell">SUP-009</td>
+                    <td class="sup-name-cell">Sai Powerloom Parts</td>
+                    <td><span class="badge-type bt-spare">Spare Parts</span></td>
+                    <td>Bangalore</td>
+                    <td>Manjunath</td>
+                    <td>8899776655</td>
+                    <td class="amt-cell">0</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 10: Global Textiles -->
+                  <tr data-type="Fabric" data-status="Active">
+                    <td>10</td>
+                    <td class="sup-code-cell">SUP-010</td>
+                    <td class="sup-name-cell">Global Textiles</td>
+                    <td><span class="badge-type bt-fabric">Fabric</span></td>
+                    <td>Surat</td>
+                    <td>Nilesh Patel</td>
+                    <td>9988123456</td>
+                    <td class="amt-cell">67,200</td>
+                    <td><span class="st-badge st-active">Active</span></td>
+                    <td>
+                      <div class="actions-cell">
+                        <button class="act-ic-btn" data-action="View" title="View"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg></button>
+                        <button class="act-ic-btn" data-action="Edit" title="Edit"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg></button>
+                        <button class="act-ic-btn" data-action="Options" title="Options"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg></button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- BOTTOM 4 TILES -->
+          <div class="bottom-tiles">
+            <div class="tile tile-blue">
+              <div class="tile-ic">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/></svg>
+              </div>
+              <div class="tile-info">
+                <span class="tile-title">Add Supplier</span>
+                <span class="tile-desc">Register new supplier</span>
+              </div>
+            </div>
+
+            <div class="tile tile-green">
+              <div class="tile-ic">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+              </div>
+              <div class="tile-info">
+                <span class="tile-title">Create Purchase Order</span>
+                <span class="tile-desc">Generate new PO</span>
+              </div>
+            </div>
+
+            <div class="tile tile-orange">
+              <div class="tile-ic">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M4 4a1 1 0 011-1h10a1 1 0 011 1v1H4V4z"/><path fill-rule="evenodd" d="M4 7h12v9a1 1 0 01-1 1H5a1 1 0 01-1-1V7zm5 3a1 1 0 000 2h2a1 1 0 100-2H9z" clip-rule="evenodd"/></svg>
+              </div>
+              <div class="tile-info">
+                <span class="tile-title">Record Payment</span>
+                <span class="tile-desc">Make supplier payment</span>
+              </div>
+            </div>
+
+            <div class="tile tile-purple">
+              <div class="tile-ic">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+              </div>
+              <div class="tile-info">
+                <span class="tile-title">View Reports</span>
+                <span class="tile-desc">Supplier analysis &amp; performance</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: 3 INFORMATION PANELS -->
+        <div class="right-col">
+
+          <!-- PANEL 1: SUPPLIER TYPE DISTRIBUTION -->
+          <div class="rc-panel">
+            <div class="rc-header">
+              <div class="rc-title">
+                <svg viewBox="0 0 20 20" fill="#f0a500" width="12" height="12"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+                SUPPLIER TYPE DISTRIBUTION
+              </div>
+            </div>
+
+            <div class="type-chart-body">
+              <!-- SVG DONUT CHART -->
+              <div class="donut-wrap">
+                <svg viewBox="0 0 100 100" class="donut-svg">
+                  <!-- C = 2 * PI * 34 ≈ 213.6 -->
+                  <!-- 1. Fabric (25% = 53.40, offset 0) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#0284c7" stroke-width="14" stroke-dasharray="53.40 160.2" stroke-dashoffset="0"/>
+                  <!-- 2. Yarn (18% = 38.45, offset -53.40) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#22c55e" stroke-width="14" stroke-dasharray="38.45 175.15" stroke-dashoffset="-53.40"/>
+                  <!-- 3. Chemicals (14% = 29.90, offset -91.85) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#db2777" stroke-width="14" stroke-dasharray="29.90 183.7" stroke-dashoffset="-91.85"/>
+                  <!-- 4. Accessories (12% = 25.63, offset -121.75) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#9333ea" stroke-width="14" stroke-dasharray="25.63 187.97" stroke-dashoffset="-121.75"/>
+                  <!-- 5. Packaging (11% = 23.50, offset -147.38) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#0891b2" stroke-width="14" stroke-dasharray="23.50 190.1" stroke-dashoffset="-147.38"/>
+                  <!-- 6. Spare Parts (11% = 23.50, offset -170.88) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#4f46e5" stroke-width="14" stroke-dasharray="23.50 190.1" stroke-dashoffset="-170.88"/>
+                  <!-- 7. Others (9% = 19.22, offset -194.38) -->
+                  <circle cx="50" cy="50" r="34" fill="none" stroke="#f59e0b" stroke-width="14" stroke-dasharray="19.22 194.38" stroke-dashoffset="-194.38"/>
+                </svg>
+                <div class="donut-center">
+                  <span class="dc-num">56</span>
+                  <span class="dc-sub">Suppliers</span>
+                </div>
+              </div>
+
+              <!-- LEGEND -->
+              <div class="type-legend">
+                <div class="tl-item">
+                  <div class="tl-label-wrap">
+                    <span class="tl-dot" style="background:#0284c7;"></span>
+                    <span>Fabric</span>
+                  </div>
+                  <span class="tl-val">14 (25%)</span>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-label-wrap">
+                    <span class="tl-dot" style="background:#22c55e;"></span>
+                    <span>Yarn</span>
+                  </div>
+                  <span class="tl-val">10 (18%)</span>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-label-wrap">
+                    <span class="tl-dot" style="background:#db2777;"></span>
+                    <span>Chemicals</span>
+                  </div>
+                  <span class="tl-val">8 (14%)</span>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-label-wrap">
+                    <span class="tl-dot" style="background:#9333ea;"></span>
+                    <span>Accessories</span>
+                  </div>
+                  <span class="tl-val">7 (12%)</span>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-label-wrap">
+                    <span class="tl-dot" style="background:#0891b2;"></span>
+                    <span>Packaging</span>
+                  </div>
+                  <span class="tl-val">6 (11%)</span>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-label-wrap">
+                    <span class="tl-dot" style="background:#4f46e5;"></span>
+                    <span>Spare Parts</span>
+                  </div>
+                  <span class="tl-val">6 (11%)</span>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-label-wrap">
+                    <span class="tl-dot" style="background:#f59e0b;"></span>
+                    <span>Others</span>
+                  </div>
+                  <span class="tl-val">5 (9%)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANEL 2: TOP 5 SUPPLIERS -->
+          <div class="rc-panel">
+            <div class="rc-header">
+              <div class="rc-title">
+                <svg viewBox="0 0 20 20" fill="#f0a500" width="12" height="12"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                TOP 5 SUPPLIERS (BY PURCHASE VALUE)
+              </div>
+              <a class="rc-link" id="top5-view-all">View All &rarr;</a>
+            </div>
+
+            <div class="top5-list">
+              <div class="top5-item">
+                <div class="t5-left">
+                  <span class="t5-rank">1</span>
+                  <span class="t5-name">Shree Textiles</span>
+                </div>
+                <span class="t5-val">₹8,45,600</span>
+              </div>
+              <div class="top5-item">
+                <div class="t5-left">
+                  <span class="t5-rank">2</span>
+                  <span class="t5-name">Venkateswara Mills</span>
+                </div>
+                <span class="t5-val">₹6,32,400</span>
+              </div>
+              <div class="top5-item">
+                <div class="t5-left">
+                  <span class="t5-rank">3</span>
+                  <span class="t5-name">Modern Yarns</span>
+                </div>
+                <span class="t5-val">₹4,12,800</span>
+              </div>
+              <div class="top5-item">
+                <div class="t5-left">
+                  <span class="t5-rank">4</span>
+                  <span class="t5-name">Global Textiles</span>
+                </div>
+                <span class="t5-val">₹3,21,600</span>
+              </div>
+              <div class="top5-item">
+                <div class="t5-left">
+                  <span class="t5-rank">5</span>
+                  <span class="t5-name">National Dyes</span>
+                </div>
+                <span class="t5-val">₹2,75,000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PANEL 3: RECENT ACTIVITY -->
+          <div class="rc-panel">
+            <div class="rc-header">
+              <div class="rc-title">
+                <svg viewBox="0 0 20 20" fill="#f0a500" width="12" height="12"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                RECENT ACTIVITY
+              </div>
+              <a class="rc-link" id="act-view-all">View All &rarr;</a>
+            </div>
+
+            <div class="activity-stream">
+              <!-- Item 1 -->
+              <div class="act-item">
+                <div class="act-ic act-ic-green">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/></svg>
+                </div>
+                <div class="act-text-wrap">
+                  <span class="act-text">New supplier added<br/><span style="color:var(--text2);font-size:9px;">Kaveri Packaging</span></span>
+                  <span class="act-time">2 hours ago</span>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="act-item">
+                <div class="act-ic act-ic-red">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M4 4a1 1 0 011-1h10a1 1 0 011 1v1H4V4z"/><path fill-rule="evenodd" d="M4 7h12v9a1 1 0 01-1 1H5a1 1 0 01-1-1V7zm5 3a1 1 0 000 2h2a1 1 0 100-2H9z" clip-rule="evenodd"/></svg>
+                </div>
+                <div class="act-text-wrap">
+                  <span class="act-text">Payment made<br/><span style="color:var(--text2);font-size:9px;">Shree Textiles - ₹50,000</span></span>
+                  <span class="act-time">5 hours ago</span>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="act-item">
+                <div class="act-ic act-ic-purple">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
+                </div>
+                <div class="act-text-wrap">
+                  <span class="act-text">Purchase order created<br/><span style="color:var(--text2);font-size:9px;">PO-2026-0183</span></span>
+                  <span class="act-time">1 day ago</span>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="act-item">
+                <div class="act-ic act-ic-blue">
+                  <svg viewBox="0 0 20 20" fill="currentColor" width="12" height="12"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg>
+                </div>
+                <div class="act-text-wrap">
+                  <span class="act-text">Supplier details updated<br/><span style="color:var(--text2);font-size:9px;">Raghav Chemicals</span></span>
+                  <span class="act-time">2 days ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+      <span class="sb-l">UDAYARAVI WEAVE MASTER &nbsp;|&nbsp; Suppliers Management</span>
+      <span class="sb-r">Build Better Weaves &nbsp;|&nbsp; <span id="sb-dt">13-Aug-2026 04:25 PM</span></span>
+    </div>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="suppliers.js"></script>
+<script>
+function confirmYarnArrival(shipId, supplier, material) {
+  const tile = document.getElementById(`ship-tile-${shipId}`);
+  const badge = document.getElementById(`ship-badge-${shipId}`);
+  const btn = document.getElementById(`ship-btn-${shipId}`);
+  
+  if (tile) {
+    tile.style.borderLeftColor = "#22c55e";
+    tile.style.background = "#0f172a";
+  }
+  if (badge) {
+    badge.className = "sbadge sb-in";
+    badge.textContent = "🟢 RECEIVED AT GODOWN";
+  }
+  if (btn) {
+    btn.textContent = "✅ IN STOCK";
+    btn.style.background = "#14532d";
+    btn.disabled = true;
+  }
+  showSimpleToast(`📦 Verified & Added ${material} from ${supplier} to Godown!`);
+}
+
+function paySupplierBill(supplier, amount) {
+  const method = prompt(`Pay ₹${amount.toLocaleString()} to ${supplier}\n1=Bank NEFT, 2=UPI, 3=Cheque`, "1");
+  if (!method) return;
+  const methodTxt = method === "2" ? "UPI" : method === "3" ? "Cheque" : "Bank Transfer";
+  
+  const dueEl = document.getElementById('stat-sup-due');
+  if (dueEl) {
+    let cur = 342600 - amount;
+    dueEl.textContent = `₹${cur.toLocaleString()}`;
+  }
+  showSimpleToast(`💸 Paid ₹${amount.toLocaleString()} to ${supplier} via ${methodTxt}!`);
+}
+
+function quickOrderYarn() {
+  const item = prompt("Select Material:", "Cotton Yarn 40s (500 kg)");
+  if (!item) return;
+  const mill = prompt("Supplier / Mill:", "Coimbatore Cotton Spinners");
+  showSimpleToast(`📝 Purchase Order sent to ${mill} for ${item}!`);
+}
+</script>
+</body>
+</html>
